@@ -1,4 +1,4 @@
-# Gen AI first step Vector Embedding for Kafka Topics
+# Gen AI first step - Vector Embedding for Kafka Topics
 
 ## DataGen Connector
 
