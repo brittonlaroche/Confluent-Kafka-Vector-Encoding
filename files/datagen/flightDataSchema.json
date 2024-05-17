@@ -1,0 +1,260 @@
+{
+    "namespace": "flight-updates",
+    "name": "flights",
+    "type": "record",
+    "fields": [
+        {
+            "name": "Airline",
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "Southwest"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Ident",
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "SWA2318",
+                        "SWA1156",
+                        "SWA1417",
+                        "SWA2846",
+                        "SWA802",
+                        "SWA1970",
+                        "SWA2613",
+                        "SWA2617",
+                        "SWA3211",
+                        "SWA2616",
+                        "SWA2619",
+                        "SWA684",
+                        "SWA802",
+                        "SWA3633",
+                        "SWA5556",
+                        "SWA4903",
+                        "SWA678",
+                        "SWA909",
+                        "SWA2397",
+                        "SWA2309",
+                        "SWA1942",
+                        "SWA1908",
+                        "SWA1982"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Status",
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "Scheduled - On Time",
+                        "Scheduled - Delayed",
+                        "Scheduled",
+                        "Cancelled",
+                        "Taxiing - Left Gate",
+                        "Arrived - Gate Arrival",
+                        "Arrived - Delayed",
+                        "Delayed",
+                        "Enroute",
+                        "Scheduled",
+                        "Scheduled",
+                        "Scheduled",
+                        "Taxiing - Left Gate",
+                        "Arrived - Gate Arrival",
+                        "Arrived - Gate Arrival",
+                        "Arrived - Delayed",
+                        "Scheduled - On Time",
+                        "Scheduled - Delayed",
+                        "Scheduled - On Time",
+                        "Enroute",
+                        "Enroute"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Departure",
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "TPA",
+                        "DAL",
+                        "DAL",
+                        "TPA",
+                        "DAL",
+                        "DAL"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Departure_Time",
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "Wed 05:30 AM",
+                        "Wed 06:15 AM",
+                        "Wed 07:15 AM",
+                        "Wed 08:30 AM",
+                        "Wed 08:45 AM",
+                        "Wed 09:30 AM",
+                        "Wed 09:45 AM",
+                        "Wed 10:15 AM",
+                        "Wed 10:30 AM",
+                        "Wed 10:40 AM",
+                        "Wed 11:45 AM"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Arrival",
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "LAX",
+                        "ORD"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Arrvial_Time",
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "Wed 12:30 PM",
+                        "Wed 01:15 PM",
+                        "Wed 02:15 PM",
+                        "Wed 03:30 PM",
+                        "Wed 03:45 PM",
+                        "Wed 04:30 PM",
+                        "Wed 04:45 PM",
+                        "Wed 05:15 PM",
+                        "Wed 05:30 PM",
+                        "Wed 05:40 PM",
+                        "Wed 05:45 PM"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Price",
+            "type": {
+                "type": "bytes",
+                "logicalType": "decimal",
+                "precision": 4,
+                "scale": 2,
+                "arg.properties": {
+                    "range": {
+                        "min": 295.00,
+                        "max": 495.00
+                    }
+                }
+            }
+        },
+        {
+            "name": "Crew_Status",
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "Full",
+                        "Searching for 1 Flight Attendant",
+                        "Augmented",
+                        "Full",
+                        "Searching for Co-Pilot",
+                        "Full",
+                        "Full",
+                        "Full",
+                        "Co-pilot Rest Period due in less than 2 hours.",
+                        "Pilot Rest Period due in less than 2 hours.",
+                        "Full"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Pilot",
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "James Buchanan",
+                        "Eliot Horowitz",
+                        "Roger Brown",
+                        "Marion Bacon",
+                        "Kevin Bacon",
+                        "Adam Smith",
+                        "Alex Hamilton",
+                        "Patrick Henry",
+                        "James Monroe",
+                        "Chester Chambers",
+                        "Beau Bridges",
+                        "Kevin Collin",
+                        "Dennis Wittekind",
+                        "Jeff Bridges",
+                        "Amelia Earhart",
+                        "Bessie Coleman",
+                        "Charles Lindbergh",
+                        "Erich Hartmann",
+                        "Paul Tibbets",
+                        "James Doolittle",
+                        "Chesley Sullenberger",
+                        "Jacqueline Cochran",
+                        "Richard Bach",
+                        "Jim Buffet",
+                        "Scott Crossfield",
+                        "Orville Wright",
+                        "Joe Walker"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "First_Officer",
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "Wilbur Wright",
+                        "Anne Lindbergh",
+                        "Beryl Markham",
+                        "Eileen Collins",
+                        "Harriet Quimby",
+                        "Noel Wien",
+                        "Alastair Atchison",
+                        "Adolphe Pegoud",
+                        "Manfred Richthoven",
+                        "Steve Fossett",
+                        "Chew Bacca",
+                        "Nick Bradshaw",
+                        "Ron Kerner",
+                        "Rick Heatherly",
+                        "Mike Metcalf",
+                        "Charlotte Blackwood",
+                        "Tom Kazansky",
+                        "Anthony Edwards",
+                        "Tom Skerritt",
+                        "Michael Ironside",
+                        "Rick Rossovich",
+                        "Willard Decker",
+                        "George Kirk",
+                        "William Riker",
+                        "Sochn Tgai Spok"
+                    ]
+                }
+            }
+        }
+    ]
+}
