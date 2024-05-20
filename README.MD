@@ -36,4 +36,20 @@ configuration updated successfully.
 +-----------------------+-----------------------------------------------------+
 | sql.secrets.openaikey | sk-Babbmpndff5CkyrFuuVTBCiKyrAaaaBBBwwwwwxxxxdsssaa |
 +-----------------------+-----------------------------------------------------+
+
+
+CREATE MODEL `vector_encoding`
+INPUT (input STRING)
+OUTPUT (embedding ARRAY<FLOAT>)
+WITH(
+  'TASK' = 'classification',
+  'PROVIDER' = 'OPENAI',
+  'OPENAI.ENDPOINT' = 'https://api.openai.com/v1/embeddings',
+  'OPENAI.API_KEY' = '{{sessionconfig/sql.secrets.openaikey}}'
+);
+Statement name: cli-2024-05-20-125717-5a83ee6c-1d05-4e27-b7f0-141e0b6bd416
+Statement successfully submitted. 
+Waiting for statement to be ready. Statement phase is PENDING. 
+
+
 ```
