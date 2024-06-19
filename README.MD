@@ -81,7 +81,7 @@ Very cool we did vector embedding for the article type.  Now we need to build so
 
 We may also want to enrich this data so we are breaking this down into a few steps.
 
-#### 3. create a table to hold a new content field
+#### 3. Create a product-content table to hold a new content field
 This table is backed up by a kafka topic with the same name for storage.
 
 ```
@@ -174,24 +174,14 @@ CREATE TABLE `product-vector` (
 ```
 
 #### 6. Call the embedding function and insert the data into the product-vector table
+This statement will call the vector embedding service and will run in the background in FlinkSQL. For testing or demo purposes you may wish to stop it as it will use tokens against the embedding service.
+You can see this under the running querries tab
+
 ```
-CREATE TABLE `product-vector` (
-    `store_id` INT,                 
-    `product_id`   INT,                         
-    `count`        INT,                         
-    `articleType`  STRING,                      
-    `size`         STRING,                      
-    `fashionType`  STRING,                      
-    `brandName`    STRING,                      
-    `baseColor`    STRING,                      
-    `gender`       STRING,                      
-    `ageGroup`     STRING,                     
-    `price`        DOUBLE,                     
-    `season`       STRING,
-    `content`      STRING,
-    `vector`      ARRAY<FLOAT>
-);
+insert into product_vector select * from `product-content`,
+lateral table (ml_predict('vector_encoding', content));
 ```
+To view and stop running Flink SQL staments
 
 #### 7.  Create a sink connector for your favorite vector database
 My favorite is MongoDB. I created this table with additional fields because MongoDB can create a vector index on the vector field and still be able to query the rest of the fields like a regular database.  MongoDB combines the ODS and the Vector search in one place!  The sink connector will create a document. Once the document is in MongoDB we create an index on the vector field for vector searches.
