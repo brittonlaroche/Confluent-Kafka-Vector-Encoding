@@ -182,7 +182,7 @@ You can see this under the running querries tab
 insert into product_vector select * from `product-content`,
 lateral table (ml_predict('vector_encoding', content));
 ```
-To view and stop running Flink SQL statements clisck the "running statements" tab
+To view and stop running Flink SQL statements clisck the "running statements" tab   
 ![Flink SQL from CC GUI](/img/flinkStatements.png)
 
 #### 7.  Create a sink connector for your favorite vector database
