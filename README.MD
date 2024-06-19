@@ -62,7 +62,7 @@ WITH(
 );
 ```
 
-#### Now test the model agains the product updates
+#### 2.  Now test the model agains the product updates
 
 ```
 select  * from `product-updates`, lateral table (ml_predict('vector_encoding', articleType));
@@ -71,6 +71,9 @@ select  * from `product-updates`, lateral table (ml_predict('vector_encoding', a
 Very cool we did vector embedding for the article type.  Now we need to build some content to vector imbed, we want to make it more like natural language.  Lets do this by concatentationg fields.   
 
 We may also want to enrich this data so we are breaking this down into a few steps.
+
+#### 3. create a table to hold a new content field
+This table is backed up by a kafka topic with the same name for storage.
 
 ```
 CREATE TABLE `product-content` (
@@ -89,3 +92,103 @@ CREATE TABLE `product-content` (
     `content`      STRING
 );
 ```
+
+#### 4. Insert data into the product content table
+Lets put in a new field that seems more like a natual language description that we can send to the vector encoding service.  We will create a field called "content" which concatenates all the fields except count which is the number of items in the store.  We can check inventory in a post processing step.
+For now we need a product description the price, store number and product id.
+
+```
+insert into `product-content` (
+				`store_id`,
+				`product_id`,
+				`count`,
+				`price`,
+				`size`, 
+				`ageGroup`, 
+				`gender`, 
+				`season`, 
+				`fashionType`, 
+				`brandName`, 
+				`baseColor`, 
+				`articleType`,
+				`content`
+)
+select  `store_id`,
+				`product_id`,
+				`count`,
+				`price`,
+				`size`, 
+				`ageGroup`, 
+				`gender`, 
+				`season`, 
+				`fashionType`, 
+				`brandName`, 
+				`baseColor`, 
+				`articleType`, 
+				INITCAP(
+					concat_ws(' ', 
+						size, 
+						ageGroup, 
+						gender, 
+						season, 
+						fashionType, 
+						brandName, 
+						baseColor, 
+						articleType,
+						', price: '||cast(price as string),
+						', store number: '||cast(store_id as string),	
+						', product id: '||cast(product_id as string))
+				) 
+		from `product-updates`;
+```
+
+#### 5.  Create the product vector table
+You will notice that the table will create a new " product-vector" kafka topic and that it creates the schema for us. The vector field is an array of floats.
+
+```
+CREATE TABLE `product-vector` (
+    `store_id` INT,                 
+    `product_id`   INT,                         
+    `count`        INT,                         
+    `articleType`  STRING,                      
+    `size`         STRING,                      
+    `fashionType`  STRING,                      
+    `brandName`    STRING,                      
+    `baseColor`    STRING,                      
+    `gender`       STRING,                      
+    `ageGroup`     STRING,                     
+    `price`        DOUBLE,                     
+    `season`       STRING,
+    `content`      STRING,
+    `vector`      ARRAY<FLOAT>
+);
+```
+
+#### 6. Call the embedding function and insert the data into the product-vector table
+```
+CREATE TABLE `product-vector` (
+    `store_id` INT,                 
+    `product_id`   INT,                         
+    `count`        INT,                         
+    `articleType`  STRING,                      
+    `size`         STRING,                      
+    `fashionType`  STRING,                      
+    `brandName`    STRING,                      
+    `baseColor`    STRING,                      
+    `gender`       STRING,                      
+    `ageGroup`     STRING,                     
+    `price`        DOUBLE,                     
+    `season`       STRING,
+    `content`      STRING,
+    `vector`      ARRAY<FLOAT>
+);
+```
+
+#### 7.  Create a sink connector for your favorite vector database
+My favorite is MongoDB the sink connector will create a document. Once the document is in MongoDB we create an index on the vector field for vector searches.
+And we are done!
+[MongoDB Example](https://www.mongodb.com/developer/products/atlas/building-generative-ai-applications-vector-search-open-source-models/)
+
+
+
+
