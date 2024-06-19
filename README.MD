@@ -99,47 +99,47 @@ For now we need a product description the price, store number and product id.
 
 ```
 insert into `product-content` (
-				`store_id`,
-				`product_id`,
-				`count`,
-				`price`,
-				`size`, 
-				`ageGroup`, 
-				`gender`, 
-				`season`, 
-				`fashionType`, 
-				`brandName`, 
-				`baseColor`, 
-				`articleType`,
-				`content`
+		`store_id`,
+		`product_id`,
+		`count`,
+		`price`,
+		`size`, 
+		`ageGroup`, 
+		`gender`, 
+		`season`, 
+		`fashionType`, 
+		`brandName`, 
+		`baseColor`, 
+		`articleType`,
+		`content`
 )
 select  `store_id`,
-				`product_id`,
-				`count`,
-				`price`,
-				`size`, 
-				`ageGroup`, 
-				`gender`, 
-				`season`, 
-				`fashionType`, 
-				`brandName`, 
-				`baseColor`, 
-				`articleType`, 
-				INITCAP(
-					concat_ws(' ', 
-						size, 
-						ageGroup, 
-						gender, 
-						season, 
-						fashionType, 
-						brandName, 
-						baseColor, 
-						articleType,
-						', price: '||cast(price as string),
-						', store number: '||cast(store_id as string),	
-						', product id: '||cast(product_id as string))
-				) 
-		from `product-updates`;
+		`product_id`,
+		`count`,
+		`price`,
+		`size`, 
+		`ageGroup`, 
+		`gender`, 
+		`season`, 
+		`fashionType`, 
+		`brandName`, 
+		`baseColor`, 
+		`articleType`, 
+		INITCAP(
+			concat_ws(' ', 
+				size, 
+				ageGroup, 
+				gender, 
+				season, 
+				fashionType, 
+				brandName, 
+				baseColor, 
+				articleType,
+				', price: '||cast(price as string),
+				', store number: '||cast(store_id as string),	
+				', product id: '||cast(product_id as string))
+		) 
+from `product-updates`;
 ```
 
 #### 5.  Create the product vector table
