@@ -1,4 +1,4 @@
-Gen AI First Step: RAG Data Augmentation for Gen AI
+# Gen AI First Step: RAG Data Augmentation for Gen AI
 Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning.   
 
 Traditional developers often rely on batch processes, leading to stale data and a labyrinth of point-to-point ETL integrations that demand constant maintenance. But what if there was a better way? Imagine building and maintaining a vector database with real-time data, free from the cumbersome batch ETL processes.   
