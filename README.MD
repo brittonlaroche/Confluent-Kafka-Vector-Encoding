@@ -1,27 +1,19 @@
 # Gen AI first step - Vector Embedding for Kafka Topics
 
 ## DataGen Connector
+Set up the datagen conector for product updates...   
+new connector -- datagen -- custom schema   
+topic name `product-updates`   
+
+Get the product schema that data gen will use to update random products here:   
+[Product Schema](https://github.com/brittonlaroche/Confluent-Kafka-Vector-Encoding/blob/main/files/datagen/productSchema.json)
 
 ## Flink SQL
 
-```sql
-select *, 
-INITCAP(
-	concat_ws(' ', 
-		size, 
-		ageGroup, 
-		gender, 
-		season, 
-		fashionType, 
-		brandName, 
-		baseColor, 
-		articleType)
-) as content 
-from `product-updates`;
-```
 
 ### First Steps
 
+#### Create the model
 ```
 Secret for key OPENAI.API_KEY must be set with 'set sql.secrets.<some_key> = <your_secret>' first.   
 Then refer it in model options with 'OPENAI.API_KEY' = '{{sessionconfig/sql.secrets.<some_key>}}'   
@@ -40,7 +32,7 @@ configuration updated successfully.
 
 CREATE MODEL `vector_encoding`
 INPUT (input STRING)
-OUTPUT (embedding ARRAY<FLOAT>)
+OUTPUT (vector ARRAY<FLOAT>)
 WITH(
   'TASK' = 'classification',
   'PROVIDER' = 'OPENAI',
@@ -52,4 +44,32 @@ Statement successfully submitted.
 Waiting for statement to be ready. Statement phase is PENDING. 
 
 
+```
+
+#### Now test the model agains the product updates
+
+```
+select  * from `product-updates`, lateral table (ml_predict('vector_encoding', articleType));
+```
+
+Very cool we did vector embedding for the article type.  Now we need to build some content to vector imbed, we want to make it more like natural language.  Lets do this by concatentationg fields.   
+
+We may also want to enrich this data so we are breaking this down into a few steps.
+
+```
+CREATE TABLE `product-content` (
+    `store_id` INT,                 
+    `product_id`   INT,                         
+    `count`        INT,                         
+    `articleType`  STRING,                      
+    `size`         STRING,                      
+    `fashionType`  STRING,                      
+    `brandName`    STRING,                      
+    `baseColor`    STRING,                      
+    `gender`       STRING,                      
+    `ageGroup`     STRING,                     
+    `price`        DOUBLE,                     
+    `season`       STRING,
+    `content`      STRING
+);
 ```
