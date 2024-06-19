@@ -5,7 +5,7 @@ Traditional developers often rely on batch processes, leading to stale data and 
 
 This GitHub repository is your gateway to that future. Dive in and discover how to revolutionize your approach to data augmentation for Generative AI, making your workflows smarter, faster, and more efficient. Let's get started on transforming the way you handle data!   
 
-![Flink SQL from CC GUI](/img/dataAugmentation.png)
+![Flink SQL from CC GUI](/img/DataAugmentation.png)
 
 ## DataGen Connector
 Set up the datagen conector for product updates...   
