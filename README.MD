@@ -76,6 +76,7 @@ WITH(
 ```
 select  * from `product-updates`, lateral table (ml_predict('vector_encoding', articleType));
 ```
+![Flink SQL from CC GUI](/img/flinkVectorEncoding.png)
 
 Very cool we did vector embedding for the article type.  Now we need to build some content to vector encode, we want to make it more like natural language.  Lets do this by concatentationg fields.   
 
@@ -181,7 +182,8 @@ You can see this under the running querries tab
 insert into product_vector select * from `product-content`,
 lateral table (ml_predict('vector_encoding', content));
 ```
-To view and stop running Flink SQL staments
+To view and stop running Flink SQL statements clisck the "running statements" tab
+![Flink SQL from CC GUI](/img/flinkStatements.png)
 
 #### 7.  Create a sink connector for your favorite vector database
 My favorite is MongoDB. I created this table with additional fields because MongoDB can create a vector index on the vector field and still be able to query the rest of the fields like a regular database.  MongoDB combines the ODS and the Vector search in one place!  The sink connector will create a document. Once the document is in MongoDB we create an index on the vector field for vector searches.
