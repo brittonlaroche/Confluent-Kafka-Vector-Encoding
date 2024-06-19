@@ -12,11 +12,15 @@ Get the product schema that data gen will use to update random products here:
 
 
 ### First Steps
-Flink is accesible from the enviroments menu item from the menu bar on the left.  Instead of the default "Clusters" tab in the middle select the "Flink SQL" tab.
+Flink is accesible from the enviroments menu item from the menu bar on the left. Select your environment. Instead of the default "Clusters" tab in the middle select the "Flink SQL" tab. At the time of this github (June 19th 2024), the ML_model function is in Early Access.  It should be released as GA very soon!
 
 ![Flink SQL from CC GUI](/img/flinksql.png)
 
-You should issue these commands from the confluent cli. 
+You should issue these commands from the confluent cli. Once you have set up your api key you should be able to connect to the confluent cli and then to Flink SQL with something like the following: 
+```
+confluent flink shell --compute-pool lfcp-5602rn --environment env-knxxpm
+```
+Your specific environment and the connect information is displayed with a copy button (center near the bottom) in the image above.
 
 #### 1. Create the model for vector encoding
 ```
