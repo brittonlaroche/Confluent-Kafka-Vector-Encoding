@@ -12,6 +12,11 @@ Get the product schema that data gen will use to update random products here:
 
 
 ### First Steps
+Flink is accesible from the enviroments menu item from the menu bar on the left.  Instead of the default "Clusters" tab in the middle select the "Flink SQL" tab.
+
+![Flink SQL from CC GUI](/img/flinksql.png)
+
+You should issue these commands from the confluent cli. 
 
 #### 1. Create the model for vector encoding
 ```
