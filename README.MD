@@ -77,7 +77,7 @@ WITH(
 select  * from `product-updates`, lateral table (ml_predict('vector_encoding', articleType));
 ```
 
-Very cool we did vector embedding for the article type.  Now we need to build some content to vector imbed, we want to make it more like natural language.  Lets do this by concatentationg fields.   
+Very cool we did vector embedding for the article type.  Now we need to build some content to vector encode, we want to make it more like natural language.  Lets do this by concatentationg fields.   
 
 We may also want to enrich this data so we are breaking this down into a few steps.
 
@@ -194,7 +194,7 @@ CREATE TABLE `product-vector` (
 ```
 
 #### 7.  Create a sink connector for your favorite vector database
-My favorite is MongoDB the sink connector will create a document. Once the document is in MongoDB we create an index on the vector field for vector searches.
+My favorite is MongoDB. I created this table with additional fields because MongoDB can create a vector index on the vector field and still be able to query the rest of the fields like a regular database.  MongoDB combines the ODS and the Vector search in one place!  The sink connector will create a document. Once the document is in MongoDB we create an index on the vector field for vector searches.
 And we are done!
 [MongoDB Example](https://www.mongodb.com/developer/products/atlas/building-generative-ai-applications-vector-search-open-source-models/)
 
