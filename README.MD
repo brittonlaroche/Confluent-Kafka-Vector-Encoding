@@ -1,4 +1,7 @@
-# Gen AI first step - Vector Embedding for Kafka Topics
+# Gen AI first step - RAG Data Augmentation for Gen AI 
+The first step in building a Retrieval-Augmented Generation (RAG) for Generative AI is building a vector store. The vector store is used to perform vector searches or semantic searches based on meaning.  Typically most old school developer start by building batch processes, which inherently insures stale data and has many cumbersome point to point ETL integrations which have to be maintained.  What if there was a better way?  What if there is a way to build and maintain a vector databse with real-time data without all of the cumbersome batch ETL processes?  There is and this Github is here to show you how.
+
+![Flink SQL from CC GUI](/img/dataAugmentation.png)
 
 ## DataGen Connector
 Set up the datagen conector for product updates...   
