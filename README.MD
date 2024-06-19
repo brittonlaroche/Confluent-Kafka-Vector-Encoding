@@ -13,7 +13,7 @@ Get the product schema that data gen will use to update random products here:
 
 ### First Steps
 
-#### Create the model
+#### 1. Create the model for vector encoding
 ```
 Secret for key OPENAI.API_KEY must be set with 'set sql.secrets.<some_key> = <your_secret>' first.   
 Then refer it in model options with 'OPENAI.API_KEY' = '{{sessionconfig/sql.secrets.<some_key>}}'   
@@ -44,6 +44,22 @@ Statement successfully submitted.
 Waiting for statement to be ready. Statement phase is PENDING. 
 
 
+```
+
+```
+set 'sql.secrets.openaikey' = '<your openAI API key>';
+```
+
+```
+CREATE MODEL `vector_encoding`
+INPUT (input STRING)
+OUTPUT (vector ARRAY<FLOAT>)
+WITH(
+  'TASK' = 'classification',
+  'PROVIDER' = 'OPENAI',
+  'OPENAI.ENDPOINT' = 'https://api.openai.com/v1/embeddings',
+  'OPENAI.API_KEY' = '{{sessionconfig/sql.secrets.openaikey}}'
+);
 ```
 
 #### Now test the model agains the product updates
