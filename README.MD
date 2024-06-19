@@ -1,5 +1,9 @@
-# Gen AI first step - RAG Data Augmentation for Gen AI 
-The first step in building a Retrieval-Augmented Generation (RAG) for Generative AI is building a vector store. The vector store is used to perform vector searches or semantic searches based on meaning.  Typically most old school developer start by building batch processes, which inherently insures stale data and has many cumbersome point to point ETL integrations which have to be maintained.  What if there was a better way?  What if there is a way to build and maintain a vector databse with real-time data without all of the cumbersome batch ETL processes?  There is and this Github is here to show you how.
+Gen AI First Step: RAG Data Augmentation for Gen AI
+Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning.   
+
+Traditional developers often rely on batch processes, leading to stale data and a labyrinth of point-to-point ETL integrations that demand constant maintenance. But what if there was a better way? Imagine building and maintaining a vector database with real-time data, free from the cumbersome batch ETL processes.   
+
+This GitHub repository is your gateway to that future. Dive in and discover how to revolutionize your approach to data augmentation for Generative AI, making your workflows smarter, faster, and more efficient. Let's get started on transforming the way you handle data!   
 
 ![Flink SQL from CC GUI](/img/dataAugmentation.png)
 
