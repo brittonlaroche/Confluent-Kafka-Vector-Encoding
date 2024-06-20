@@ -1,7 +1,10 @@
 # Gen AI First Step: Vector Encoding for Retrieval-Augmented Generation (RAG)
 Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning. RAG is used to generate prompts to the LLM with proprietary data, enabling the LLM to make precise recommendations. In the context of Generative AI, a vector is a mathematical representation of data that captures its semantic meaning. It is a numerical array, where each element of the array represents a feature or characteristic of the data. Vectors are used to encode information in a way that can be easily processed by machine learning models, particularly for tasks that involve understanding and generating natural language.
 
-### How Vectors Are Used by Gen AI      
+### How Vectors Are Used by Gen AI     
+   
+[Learn more about Generative AI here](https://www.confluent.io/learn/generative-ai/)   
+   
 ***Data Representation:***   
    
 Vectors transform raw data (such as text, images, or audio) into a structured format that models can understand. For text, this involves converting words, sentences, or documents into fixed-length arrays of numbers.   
@@ -12,7 +15,7 @@ Vectors allow for semantic search, meaning searches based on the meaning of the 
 
 ***Retrieval-Augmented Generation (RAG):***   
    
-In RAG, vectors are used to retrieve relevant data from a vector database. When a query is made, the system converts it into a vector and searches the vector database for the closest matches. This relevant data is then used to generate context-aware responses or recommendations.      
+In RAG, vectors are used to retrieve relevant data from a vector database. When a query is made, the system converts it into a vector and searches the vector database for the closest matches. This relevant data is then used to generate context-aware responses or recommendations. [Learn more about RAG here](https://www.confluent.io/learn/retrieval-augmented-generation-rag/)      
 
 ***Training and Inference:***   
    
