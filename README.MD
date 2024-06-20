@@ -50,7 +50,7 @@ confluent flink shell --compute-pool lfcp-pool-from-gui --environment env-myenv-
 ```
 
 
-Useful documentation for getting started with Flink Shell via the confluent command line client is [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html)
+Useful documentation for getting started with Flink Shell via the Confluent command line client can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html)
 
 
 
