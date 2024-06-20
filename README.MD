@@ -3,8 +3,6 @@ Embark on an exciting journey into the world of Retrieval-Augmented Generation (
 
 ### How Vectors Are Used by Gen AI     
    
-[Learn more about Generative AI here](https://www.confluent.io/learn/generative-ai/)   
-   
 ***Data Representation:***   
    
 Vectors transform raw data (such as text, images, or audio) into a structured format that models can understand. For text, this involves converting words, sentences, or documents into fixed-length arrays of numbers.   
@@ -36,6 +34,9 @@ Prompt Generation: These items are used to create a prompt for the LLM.
 LLM Response: The LLM generates a response with specific and accurate recommendations for the user.   
    
 In summary, vectors are essential for transforming unstructured data into a format that Generative AI can effectively process, enabling tasks like semantic search, contextual understanding, and precise data retrieval.   
+
+
+[Learn more about Generative AI here](https://www.confluent.io/learn/generative-ai/)   
 
 ## Getting started ##
 
