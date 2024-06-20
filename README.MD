@@ -1,4 +1,4 @@
-# Gen AI First Step: RAG Data Augmentation for Gen AI
+# Gen AI First Step: Vector Encoding for Retrieval-Augmented Generation 
 Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning. RAG is used to generate prompts to the LLM with proprietary data, enabling the LLM to make precise recommendations. For example, in this GitHub repository, user profile data will be matched to the size of clothing and the fashion type requested by the user's query. This information will be used to query the vector store, and the results will be sent to the LLM as prompts, ensuring that the recommendations made by the LLM are specific and accurate.
 
 Traditional developers often rely on batch processes, leading to stale data and a labyrinth of point-to-point ETL integrations that demand constant maintenance. But what if there was a better way? Imagine building and maintaining a vector database with real-time data, free from the cumbersome batch ETL processes.
