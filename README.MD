@@ -23,7 +23,7 @@ Flink can be accessed through the environments menu on the left-hand side of the
 
 ![Flink SQL from CC GUI](/img/flinksql.png)
 
-You should issue these commands from the confluent cli. If you do not have it you can see the instructions for intalling it [here](https://docs.confluent.io/confluent-cli/current/install.html) Once you have set up your api key you should be able to connect to the confluent cli.  Instuctions for connecting to your environemnt through the confluent cli are [here](https://docs.confluent.io/confluent-cli/current/connect.html). A quick getting started guide is [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli)
+You should issue these commands from the Confluent CLI. If you do not have the Confluent CLI, you can find the installation instructions [here](https://docs.confluent.io/confluent-cli/current/install.html). Once you have set up your API key, you should be able to connect to the Confluent CLI. Instructions for connecting to your environment through the Confluent CLI are available [here](https://docs.confluent.io/confluent-cli/current/connect.html). A quick getting started guide can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).
 
 Here are some useful confluent cli commands
 ```
