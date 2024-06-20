@@ -132,7 +132,7 @@ WITH(
 );
 ```
 
-#### 2.  Now test the model agains the product updates
+#### 2.  Now test the model to generate vector encoding against the real-time product updates
 
 ```
 select  * from `product-updates`, lateral table (ml_predict('vector_encoding', articleType));
