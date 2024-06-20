@@ -46,9 +46,8 @@ You should be able to connect to the Flink Shell with the following.
 ```
 confluent flink shell --compute-pool lfcp-pool-from-gui --environment env-myenv-from-gui
 ```
-![Flink SQL from CC GUI](/img/flinksql.png)
 
-Your specific environment and the connect information is displayed with a copy button (center near the bottom) in the image above.
+Your specific environment and the connect information is displayed with a copy button (center near the bottom) in the image above. Click the image for a larger view.
 
 Useful documentation for getting started with Flink Shell via the confluent command line client is [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html)
 
