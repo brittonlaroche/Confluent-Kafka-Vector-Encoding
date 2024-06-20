@@ -31,20 +31,21 @@ Semantic Search: The vector is used to search a vector database of clothing item
 Data Retrieval: The most relevant items (red, summer dresses, medium size) are retrieved.   
 Prompt Generation: These items are used to create a prompt for the LLM.   
 LLM Response: The LLM generates a response with specific and accurate recommendations for the user.   
+   
 In summary, vectors are essential for transforming unstructured data into a format that Generative AI can effectively process, enabling tasks like semantic search, contextual understanding, and precise data retrieval.   
 
 ## Getting started ##
 
-In this github example, the data that is vector encoded here is placed in a vector database where the user profile data will be matched to the size of clothing and the fashion type requested by the user's query. This information will be used to query the vector store, and the results will be sent to the LLM as prompts, ensuring that the recommendations made by the LLM are specific and accurate.
+In this github example, reatil data from source systems will be vector encoded in real-time as data changes. It will be inserted as the data sourced from a connector int a topic.  It will then be converted into a vector with flink SQL inserted into a new topic.  The connector architecture will then sink this data into a vector database. This GitHub example shows you how to do this first step. 
+
+Next the Gennerative AI application will query this vector database. With the user profile data and questions the meaning will be matched to the size of clothing and the fashion type requested by the user's query. The results will be sent to the LLM as prompts, ensuring that the recommendations made by the LLM are specific and accurate.
+[See a demo of the vector database query in action here](https://www.youtube.com/watch?v=pLU7dS9DJJg)    
+[The github behind this demo is here](https://github.com/brittonlaroche/GenAI-ChatGPT4-Confluent-MongoDB-Vector-Retail/)
 
 Traditional developers often rely on batch processes to vector enocde their data, leading to stale data and a labyrinth of point-to-point ETL integrations that demand constant maintenance. But what if there was a better way? Imagine building and maintaining a vector database with real-time data, free from the cumbersome batch ETL processes.
 
 This GitHub repository is your gateway to that future. Dive in and discover how to revolutionize your approach to data augmentation for Generative AI, making your workflows smarter, faster, and more efficient. Let's get started on transforming the way you handle data!  
    
-[See a demo of the vector database query in action here](https://www.youtube.com/watch?v=pLU7dS9DJJg)    
-[The github behind this demo is here](https://github.com/brittonlaroche/GenAI-ChatGPT4-Confluent-MongoDB-Vector-Retail/)
-    
-
 ![Flink SQL from CC GUI](/img/DataAugmentation.png)
 
 ## DataGen Connector
