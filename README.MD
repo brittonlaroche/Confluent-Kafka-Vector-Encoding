@@ -1,5 +1,41 @@
-# Gen AI First Step: Vector Encoding for Retrieval-Augmented Generation 
-Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning. RAG is used to generate prompts to the LLM with proprietary data, enabling the LLM to make precise recommendations. For example, in this GitHub repository, user profile data will be matched to the size of clothing and the fashion type requested by the user's query. This information will be used to query the vector store, and the results will be sent to the LLM as prompts, ensuring that the recommendations made by the LLM are specific and accurate.
+# Gen AI First Step: Vector Encoding for Retrieval-Augmented Generation (RAG)
+Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning. RAG is used to generate prompts to the LLM with proprietary data, enabling the LLM to make precise recommendations. In the context of Generative AI, a vector is a mathematical representation of data that captures its semantic meaning. It is a numerical array, where each element of the array represents a feature or characteristic of the data. Vectors are used to encode information in a way that can be easily processed by machine learning models, particularly for tasks that involve understanding and generating natural language.
+
+##### How Vectors Are Used by Gen AI      
+***Data Representation:***   
+   
+Vectors transform raw data (such as text, images, or audio) into a structured format that models can understand. For text, this involves converting words, sentences, or documents into fixed-length arrays of numbers.   
+
+***Semantic Search:***   
+   
+Vectors allow for semantic search, meaning searches based on the meaning of the data rather than just keywords. For example, similar words or phrases will have similar vector representations, enabling more accurate and relevant search results.   
+
+***Retrieval-Augmented Generation (RAG):***   
+   
+In RAG, vectors are used to retrieve relevant data from a vector database. When a query is made, the system converts it into a vector and searches the vector database for the closest matches. This relevant data is then used to generate context-aware responses or recommendations.      
+
+***Training and Inference:***   
+   
+During the training phase, AI models learn to convert input data into vectors that capture the essential features and relationships. During inference, these vectors are used to generate outputs, such as text generation, image recognition, or recommendation systems.   
+   
+***Contextual Understanding:***
+
+Vectors enable AI models to understand the context and relationships between different pieces of data. For instance, in natural language processing, vectors can represent the context of words within a sentence, helping the model generate coherent and contextually appropriate responses.
+
+##### Example Use in Generative AI
+Imagine a Generative AI system designed to recommend clothing items based on user preferences:   
+   
+User Query: "Find me a red summer dress in medium size."   
+Vectorization: The query is converted into a vector.   
+Semantic Search: The vector is used to search a vector database of clothing items.   
+Data Retrieval: The most relevant items (red, summer dresses, medium size) are retrieved.   
+Prompt Generation: These items are used to create a prompt for the LLM.   
+LLM Response: The LLM generates a response with specific and accurate recommendations for the user.   
+In summary, vectors are essential for transforming unstructured data into a format that Generative AI can effectively process, enabling tasks like semantic search, contextual understanding, and precise data retrieval.   
+
+## Getting started ##
+
+In this github example, the data that is vector encoded here is placed in a vector database where the user profile data will be matched to the size of clothing and the fashion type requested by the user's query. This information will be used to query the vector store, and the results will be sent to the LLM as prompts, ensuring that the recommendations made by the LLM are specific and accurate.
 
 Traditional developers often rely on batch processes to vector enocde their data, leading to stale data and a labyrinth of point-to-point ETL integrations that demand constant maintenance. But what if there was a better way? Imagine building and maintaining a vector database with real-time data, free from the cumbersome batch ETL processes.
 
