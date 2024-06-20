@@ -22,7 +22,7 @@ new connector --> datagen --> custom schema on configuration tab
 
 Use the link for "additional configuration" and select JSON_SR for JSON and Schema Registry.  
    
-![Additional Config](/img/additionalconfigjsonsr.png) 
+![Additional Config](/img/additionalconfig.png) 
    
 Now we need a custom schema for product updates, we will use the custom schema "Provide Your Own Schema" on configuration tab.     
 Get the product schema that data gen will use to update random products here:   
@@ -30,7 +30,7 @@ Get the product schema that data gen will use to update random products here:
 
 Paste it in the configuration tab.   
 
-![Flink SQL from CC GUI](/img/customschema.png)   
+![Flink SQL from CC GUI](/img/additionalconfigjsonsr.png)   
 
    
 The datagen connector will generate random product data simulating a real connector from an operational data store recieveing product updates as inventory is recieved from each retail store.
