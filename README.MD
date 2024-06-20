@@ -28,8 +28,7 @@ Use the link for "additional configuration" and select JSON_SR for JSON and Sche
    
 ![Additional Config](/img/additionalconfig.png) 
    
-Now we need a custom schema for product updates, we will use the custom schema "Provide Your Own Schema" on configuration tab.     
-Get the product schema that data gen will use to update random products here:   
+Now we need a custom schema for product updates, we will use the custom schema "Provide Your Own Schema" on configuration tab. Get the product schema that datagen will use to update random products here:   
 [Product Schema](https://raw.githubusercontent.com/brittonlaroche/Confluent-Kafka-Vector-Encoding/main/files/datagen/productSchema.json)   
 
 Paste it in the configuration tab.   
