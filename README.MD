@@ -23,7 +23,7 @@ Flink can be accessed through the environments menu on the left-hand side of the
 
 ![Flink SQL from CC GUI](/img/flinksql.png)
 
-You should issue these commands from the Confluent CLI. If you do not have the Confluent CLI, you can find the installation instructions [here](https://docs.confluent.io/confluent-cli/current/install.html). Once you have set up your API key, you should be able to connect to the Confluent CLI. Instructions for connecting to your environment through the Confluent CLI are available [here](https://docs.confluent.io/confluent-cli/current/connect.html). A quick getting started guide can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).
+You should issue these commands from the Confluent CLI. If you do not have the Confluent CLI, you can find the installation instructions [here](https://docs.confluent.io/confluent-cli/current/install.html). Instructions for connecting to your environment through the Confluent CLI are available [here](https://docs.confluent.io/confluent-cli/current/connect.html). A quick getting started guide can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).
 
 Here are some useful confluent cli commands
 ```
@@ -38,8 +38,12 @@ confluent kafka cluster use lkc-mycluster-from-list
 confluent kafka topic list
 
 ```
+Next we go to the API Key Tab and click the "Add new API key."   
+![Flink API Key](/img/flinkapikey.png)
 
-And then to connect to Flink SQL shell with something like the following: 
+Once you have set up your API key, and saved it in the steps they provided you should be able to connect to the Flink Shell with the collowing.   
+
+
 ```
 confluent flink shell --compute-pool lfcp-5602rn --environment env-knxxpm
 ```
