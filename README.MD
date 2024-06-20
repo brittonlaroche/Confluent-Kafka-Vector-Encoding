@@ -185,7 +185,7 @@ select  * from `product-updates`, lateral table (ml_predict('vector_encoding', a
 ```
 ![Flink SQL from CC GUI](/img/flinkVectorEncoding.png)
 
-Very cool we did vector embedding for the article type.  Now we need to build some content to vector encode, we want to make it more like natural language.  Lets do this by concatenating fields.   
+Very cool! We did vector embedding for the article type, and it was pretty effortless.  Now we need to build some content to vector encode, we want to make it more like natural language.  Lets do this by concatenating fields.   
 
 We may also want to enrich this data so we are breaking this down into a few steps.
 
