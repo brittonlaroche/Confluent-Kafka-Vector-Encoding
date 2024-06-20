@@ -1,7 +1,7 @@
 # Gen AI First Step: Vector Encoding for Retrieval-Augmented Generation (RAG)
 Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning. RAG is used to generate prompts to the LLM with proprietary data, enabling the LLM to make precise recommendations. In the context of Generative AI, a vector is a mathematical representation of data that captures its semantic meaning. It is a numerical array, where each element of the array represents a feature or characteristic of the data. Vectors are used to encode information in a way that can be easily processed by machine learning models, particularly for tasks that involve understanding and generating natural language.
 
-##### How Vectors Are Used by Gen AI      
+### How Vectors Are Used by Gen AI      
 ***Data Representation:***   
    
 Vectors transform raw data (such as text, images, or audio) into a structured format that models can understand. For text, this involves converting words, sentences, or documents into fixed-length arrays of numbers.   
@@ -22,7 +22,7 @@ During the training phase, AI models learn to convert input data into vectors th
 
 Vectors enable AI models to understand the context and relationships between different pieces of data. For instance, in natural language processing, vectors can represent the context of words within a sentence, helping the model generate coherent and contextually appropriate responses.
 
-##### Example Use in Generative AI
+### Example Use in Generative AI
 Imagine a Generative AI system designed to recommend clothing items based on user preferences:   
    
 User Query: "Find me a red summer dress in medium size."   
