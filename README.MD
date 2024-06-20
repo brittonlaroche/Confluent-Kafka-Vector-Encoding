@@ -11,11 +11,18 @@ This GitHub repository is your gateway to that future. Dive in and discover how 
 
 ![Flink SQL from CC GUI](/img/setupconnector.png) 
 
-create a topic named `product-updates` 
+Create a topic named `product-updates` 
 Set up the datagen conector for product updates... Add a new connector, select datagen, then use the link for "additional configuration"    
+   
+![Datagen](/img/datagen.png) 
+
+Use the product-updates topic.   
 You will need an api key, use one if you have it if not create one and save the secret.   
 new connector --> datagen --> custom schema on configuration tab  
-  
+
+   
+![Additional Config](/img/additionalconfig.png) 
+   
 
 Get the product schema that data gen will use to update random products here:   
 [Product Schema](https://raw.githubusercontent.com/brittonlaroche/Confluent-Kafka-Vector-Encoding/main/files/datagen/productSchema.json)   
