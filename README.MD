@@ -41,6 +41,8 @@ confluent kafka topic list
 
 ```
 A quick getting started guide can on the flink shell can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).  
+   
+   
 You should be able to connect to the Flink Shell with the following.   
    
 ![Flink SQL Copy Login](/img/flinksqllogincopy.png)   
