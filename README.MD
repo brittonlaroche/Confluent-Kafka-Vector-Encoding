@@ -20,7 +20,7 @@ During the training phase, AI models learn to convert input data into vectors th
    
 ***Contextual Understanding:***
 
-Vectors enable AI models to understand the context and relationships between different pieces of data. For instance, in natural language processing, vectors can represent the context of words within a sentence, helping the model generate coherent and contextually appropriate responses.
+Vectors enable AI models to understand the context and relationships between different pieces of data. For instance, in natural language processing (NLP), vectors can represent the context of words within a sentence, helping the model generate coherent and contextually appropriate responses.
 
 ### Example Use in Generative AI
 Imagine a Generative AI system designed to recommend clothing items based on user preferences:   
@@ -36,7 +36,7 @@ In summary, vectors are essential for transforming unstructured data into a form
 
 ## Getting started ##
 
-In this github example, reatil data from source systems will be vector encoded in real-time as data changes. It will be inserted as the data sourced from a connector int a topic.  It will then be converted into a vector with flink SQL inserted into a new topic.  The connector architecture will then sink this data into a vector database. This GitHub example shows you how to do this first step. 
+In this github example, retail data from source systems will be vector encoded in real-time as data changes. It will be inserted as the data sourced from a connector int a topic.  It will then be converted into a vector with flink SQL inserted into a new topic.  The connector architecture will then sink this data into a vector database. This GitHub example shows you how to do this first step of hydrating and maintaing a vector database with out using any batch ETL processes. 
 
 Next the Gennerative AI application will query this vector database. With the user profile data and questions the meaning will be matched to the size of clothing and the fashion type requested by the user's query. The results will be sent to the LLM as prompts, ensuring that the recommendations made by the LLM are specific and accurate.
 [See a demo of the vector database query in action here](https://www.youtube.com/watch?v=pLU7dS9DJJg)    
