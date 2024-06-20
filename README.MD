@@ -8,12 +8,22 @@ This GitHub repository is your gateway to that future. Dive in and discover how 
 ![Flink SQL from CC GUI](/img/DataAugmentation.png)
 
 ## DataGen Connector
-Set up the datagen conector for product updates...   
-new connector -- datagen -- custom schema   
-topic name `product-updates`   
+
+![Flink SQL from CC GUI](/img/setupconnector.png) 
+
+create a topic named `product-updates` 
+Set up the datagen conector for product updates... Add a new connector, select datagen, then use the link for "additional configuration"  
+new connector --> datagen --> custom schema on configuration tab  
+  
 
 Get the product schema that data gen will use to update random products here:   
-[Product Schema](https://github.com/brittonlaroche/Confluent-Kafka-Vector-Encoding/blob/main/files/datagen/productSchema.json)
+[Product Schema](https://github.com/brittonlaroche/Confluent-Kafka-Vector-Encoding/blob/main/files/datagen/productSchema.json)   
+
+Paste it in the configuration tab.   
+
+The datagen connector will generate random product data simulating a real connector from an operational data store recieveing product updates as inventory is recieved from each retail store.
+
+
 
 ## Flink SQL
 
