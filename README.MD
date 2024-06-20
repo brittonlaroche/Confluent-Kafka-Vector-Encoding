@@ -49,7 +49,8 @@ This GitHub repository is your gateway to that future. Dive in and discover how 
 ![Flink SQL from CC GUI](/img/DataAugmentation.png)
 
 ## DataGen Connector
-Before we can convert data into vectors we need some sample data.  We could set up a connector to a reatil database but this would be time comsuming.  For the purposes of this demo we will generate some random data from confluent clouds datagen connector.  To get started we need to create the datagen connector and have it insert data into a `product-updates` topic.   
+Before we can convert data into vectors, we need some sample data. Setting up a connector to a retail database would be time-consuming, so for the purposes of this demo, we will generate some random data using Confluent Cloud's datagen connector. To get started, we need to create the datagen connector and have it insert data into a `product-updates` topic.  
+   
 
 ![Flink SQL from CC GUI](/img/setupconnector.png) 
 
