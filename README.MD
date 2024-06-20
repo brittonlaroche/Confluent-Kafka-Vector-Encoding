@@ -23,6 +23,8 @@ Flink can be accessed through the environments menu on the left-hand side of the
 
 ![Flink SQL from CC GUI](/img/flinksql.png)
 
+If flink is not set up you will need to create a new flink pool in the same region and cloud provider as your confluent cluster.  You can create a free basic cluster at for this exersize if you do not have a confluent cloud cluster here: [https://confluent.cloud/](https://confluent.cloud/)
+
 You should issue these commands from the Confluent CLI. If you do not have the Confluent CLI, you can find the installation instructions [here](https://docs.confluent.io/confluent-cli/current/install.html). Instructions for connecting to your environment through the Confluent CLI are available [here](https://docs.confluent.io/confluent-cli/current/connect.html). 
 
 Here are some useful confluent cli commands
