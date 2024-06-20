@@ -19,9 +19,9 @@ Get the product schema that data gen will use to update random products here:
 
 
 ### First Steps
-Flink is accesible from the enviroments menu item from the menu bar on the left. Select your environment. Instead of the default "Clusters" tab in the middle select the "Flink SQL" tab. At the time of this github (June 19th 2024), the ML_model function is in Early Access.  It should be released as GA very soon!
+Flink can be accessed through the environments menu on the left-hand side of the Confluent Cloud interface. Select your environment, then navigate to the "Flink SQL" tab, which is located in the middle of the screen, instead of the default "Clusters" tab. As of this GitHub update (June 19th, 2024), the ML_Model function used in this github is in Early Access and is expected to be generally available (GA) soon.
 
-
+![Flink SQL from CC GUI](/img/flinksql.png)
 
 You should issue these commands from the confluent cli. If you do not have it you can see the instructions for intalling it [here](https://docs.confluent.io/confluent-cli/current/install.html) Once you have set up your api key you should be able to connect to the confluent cli.  Instuctions for connecting to your environemnt through the confluent cli are [here](https://docs.confluent.io/confluent-cli/current/connect.html). A quick getting started guide is [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli)
 
@@ -38,9 +38,8 @@ confluent kafka cluster use lkc-mycluster-from-list
 confluent kafka topic list
 
 ```
-![Flink SQL from CC GUI](/img/flinksql.png)
 
-And then to connect to Flink SQL with something like the following: 
+And then to connect to Flink SQL shell with something like the following: 
 ```
 confluent flink shell --compute-pool lfcp-5602rn --environment env-knxxpm
 ```
