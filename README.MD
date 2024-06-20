@@ -21,13 +21,37 @@ Get the product schema that data gen will use to update random products here:
 ### First Steps
 Flink is accesible from the enviroments menu item from the menu bar on the left. Select your environment. Instead of the default "Clusters" tab in the middle select the "Flink SQL" tab. At the time of this github (June 19th 2024), the ML_model function is in Early Access.  It should be released as GA very soon!
 
+
+
+You should issue these commands from the confluent cli. If you do not have it you can see the instructions for intalling it [here](https://docs.confluent.io/confluent-cli/current/install.html) Once you have set up your api key you should be able to connect to the confluent cli.  Instuctions for connecting to your environemnt through the confluent cli are [here](https://docs.confluent.io/confluent-cli/current/connect.html). A quick getting started guide is [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli)
+
+Here are some useful confluent cli commands
+```
+confluent login --save --organization-id dacfbee1-acbc-my-org-id-from-the-cloud-gui
+
+confluent environment list
+confluent environment use env-myenv-from-list
+
+confluent kafka cluster list
+confluent kafka cluster use lkc-mycluster-from-list
+
+confluent kafka topic list
+
+```
 ![Flink SQL from CC GUI](/img/flinksql.png)
 
-You should issue these commands from the confluent cli. Once you have set up your api key you should be able to connect to the confluent cli and then to Flink SQL with something like the following: 
+And then to connect to Flink SQL with something like the following: 
 ```
 confluent flink shell --compute-pool lfcp-5602rn --environment env-knxxpm
 ```
 Your specific environment and the connect information is displayed with a copy button (center near the bottom) in the image above.
+
+Useful documentation for getting started with Flink Shell via the confluent command line client is [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html)
+
+
+
+
+
 
 #### 1. Create the model for vector encoding
 ```
