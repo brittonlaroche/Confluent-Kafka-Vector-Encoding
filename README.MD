@@ -1,9 +1,13 @@
 # Gen AI First Step: RAG Data Augmentation for Gen AI
-Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning.   
+Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning. RAG is used to generate prompts to the LLM with proprietary data, enabling the LLM to make precise recommendations. For example, in this GitHub repository, user profile data will be matched to the size of clothing and the fashion type requested by the user's query. This information will be used to query the vector store, and the results will be sent to the LLM as prompts, ensuring that the recommendations made by the LLM are specific and accurate.
 
-Traditional developers often rely on batch processes, leading to stale data and a labyrinth of point-to-point ETL integrations that demand constant maintenance. But what if there was a better way? Imagine building and maintaining a vector database with real-time data, free from the cumbersome batch ETL processes.   
+Traditional developers often rely on batch processes, leading to stale data and a labyrinth of point-to-point ETL integrations that demand constant maintenance. But what if there was a better way? Imagine building and maintaining a vector database with real-time data, free from the cumbersome batch ETL processes.
 
-This GitHub repository is your gateway to that future. Dive in and discover how to revolutionize your approach to data augmentation for Generative AI, making your workflows smarter, faster, and more efficient. Let's get started on transforming the way you handle data!   
+This GitHub repository is your gateway to that future. Dive in and discover how to revolutionize your approach to data augmentation for Generative AI, making your workflows smarter, faster, and more efficient. Let's get started on transforming the way you handle data!  
+   
+[See a demo of the vector database query in action here](https://www.youtube.com/watch?v=pLU7dS9DJJg)    
+[The github behind this demo is here](https://github.com/brittonlaroche/GenAI-ChatGPT4-Confluent-MongoDB-Vector-Retail/)
+    
 
 ![Flink SQL from CC GUI](/img/DataAugmentation.png)
 
