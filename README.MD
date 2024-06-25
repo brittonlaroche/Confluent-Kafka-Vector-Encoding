@@ -309,7 +309,8 @@ In the connectors console we will see a list of connectors (if we have any) and 
 |<a href="https://www.youtube.com/watch?v=_9cvz7kmeCg&list=PLjGEA1Gur_Sm_1MRUwXFngYeAQ1wV7lah&index=6" target="video"></a>| 
 
 Once the document is in MongoDB we create an index on the vector field for vector searches.
-And we are done![MongoDB Example](https://www.mongodb.com/developer/products/atlas/building-generative-ai-applications-vector-search-open-source-models/)
+And we are done!    
+[MongoDB Vector Index Example Here](https://www.mongodb.com/developer/products/atlas/building-generative-ai-applications-vector-search-open-source-models/)
 
 Another github on the power of Confluent with MongoDB Atlas showing how to perform legacy migration from relational databases like Oracle to a modern cloud native database like MongoDB Atlas is below.  The github is useful for trouble shooting connector data types with Single Message Transform (SMT):   
 [https://github.com/brittonlaroche/Oracle-Confluent-MongoDB](https://github.com/brittonlaroche/Oracle-Confluent-MongoDB)
