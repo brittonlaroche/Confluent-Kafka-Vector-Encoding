@@ -293,7 +293,7 @@ To view and stop running Flink SQL statements click the "running statements" tab
 ![Flink SQL from CC GUI](/img/flinkStatements.png)
 
 #### 7.  Create a sink connector for your favorite vector database
-My favorite is MongoDB. I created this table with additional fields because MongoDB can create a vector index on the vector field and still be able to query the rest of the fields like a regular database.  MongoDB combines the ODS and the Vector search in one place!  The sink connector will create a document. 
+My favorite is MongoDB Atlas Vector Search. I created this table with additional fields because MongoDB can create a vector index on the vector field and still be able to query the rest of the fields like a regular database.  MongoDB combines the ODS and the Vector search in one place!  The sink connector will create a document. 
 
 Start by opening the Confluent Cloud and MongoDB Atlas clusters in the browser:   
 
