@@ -293,7 +293,7 @@ To view and stop running Flink SQL statements click the "running statements" tab
 ![Flink SQL from CC GUI](/img/flinkStatements.png)
 
 #### 7.  Create a sink connector for your favorite vector database
-My favorite is MongoDB Atlas Vector Search. I created this table with additional fields because MongoDB can create a vector index on the vector field and still be able to query the rest of the fields like a regular database.  MongoDB combines the Operational Data Store (ODS) and the Vector search in one place!  The sink connector will create a document. There is a powerful synergy between Kafka, Confluent and MongoDB that we like to call Kafcongo.
+My favorite is MongoDB Atlas Vector Search. I created the `product-vector` table with additional fields because MongoDB can create a vector index on the vector field and still be able to query the rest of the fields like a regular database.  MongoDB combines the Operational Data Store (ODS) and the Vector search in one place!  The sink connector will create a document. There is a powerful synergy between Kafka, Confluent and MongoDB that we like to call Kafcongo.
 
 Start by opening the Confluent Cloud and MongoDB Atlas clusters in the browser:   
 
@@ -308,9 +308,13 @@ In the connectors console we will see a list of connectors (if we have any) and 
 |[Click here to watch a 6 Minute Video on creating a mongoDB sink connector](https://www.youtube.com/watch?v=_9cvz7kmeCg&list=PLjGEA1Gur_Sm_1MRUwXFngYeAQ1wV7lah&index=6)|   
 |<a href="https://www.youtube.com/watch?v=_9cvz7kmeCg&list=PLjGEA1Gur_Sm_1MRUwXFngYeAQ1wV7lah&index=6" target="video"></a>| 
 
-Once the document is in MongoDB we create an index on the vector field for vector searches.
-And we are done!    
+Once the document is in MongoDB we create an index on the vector field for vector searches.  
 [MongoDB Vector Index Example Here](https://www.mongodb.com/developer/products/atlas/building-generative-ai-applications-vector-search-open-source-models/)
+   
+And we are done!    
+   
+   
+
 
 Another github on the power of Confluent with MongoDB Atlas showing how to perform legacy migration from relational databases like Oracle to a modern cloud native database like MongoDB Atlas is below.  The github is useful for trouble shooting connector data types with Single Message Transform (SMT):   
 [https://github.com/brittonlaroche/Oracle-Confluent-MongoDB](https://github.com/brittonlaroche/Oracle-Confluent-MongoDB)
