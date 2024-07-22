@@ -84,13 +84,14 @@ Paste it in the configuration tab.
    
 The datagen connector will generate random product data simulating a real connector from an operational data store recieveing product updates as inventory is recieved from each retail store.
 
-You will need to adjust a couple of settings to get the data to disply properly in the cloud gui.  Go to the Connector and under advanced settings the following:   
+You will need to adjust a couple of settings to get some of the data to display properly in the cloud gui.  Go to the Datagen Connector we just created and under "settings" Set the following parameters:   
    
 `JSON output decimal format: BASE64`   
 `Schema Context: Default`   
 `Max interval between messages (MS): 25000`   
 
-**Trasforms**
+**Trasforms**   
+Add a new value single message transform.   
 For the value of the price field set the spec to `price:float64`   
    
 ![Transforms from CC GUI](/img/transforms.png)   
