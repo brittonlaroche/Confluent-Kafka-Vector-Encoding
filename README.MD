@@ -66,7 +66,7 @@ Set up the datagen conector for product updates... Add a new connector, select d
    
 ![Datagen](/img/datagen.png) 
 
-Use the product-updates topic.   
+Use the **product-updates** topic.   
 You will need an api key, use one if you have it if not create one and save the secret.   
 new connector --> datagen --> custom schema on configuration tab  
 
