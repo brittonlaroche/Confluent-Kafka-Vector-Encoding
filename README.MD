@@ -303,7 +303,7 @@ This statement will call the vector embedding service and will run in the backgr
 You can see this under the running querries tab
 
 ```
-insert into product_vector select * from `product-content`,
+insert into `product-vector` select * from `product-content`,
 lateral table (ml_predict('vector_encoding', content));
 ```
 To view and stop running Flink SQL statements click the "running statements" tab   
