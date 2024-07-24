@@ -74,13 +74,17 @@ Use the link for "additional configuration" and select JSON_SR for JSON and Sche
    
 ![Additional Config](/img/additionalconfig.png) 
    
-Now we need a custom schema for product updates, we will use the custom schema "Provide Your Own Schema" on configuration tab. Get the product schema that datagen will use to update random products here:   
+Now we need a custom schema for product updates, we will use the custom schema "Provide Your Own Schema" on configuration tab.  
+   
+Get the product schema that datagen will use to update random products here:      
 [Product Schema](https://raw.githubusercontent.com/brittonlaroche/Confluent-Kafka-Vector-Encoding/main/files/datagen/productSchema.json)   
 
 Paste it in the configuration tab.   
 
 ![Flink SQL from CC GUI](/img/additionalconfigjsonsr.png)   
-
+   
+Get the product schema that datagen will use to update random products here:      
+[Product Schema](https://raw.githubusercontent.com/brittonlaroche/Confluent-Kafka-Vector-Encoding/main/files/datagen/productSchema.json)   
    
 The datagen connector will generate random product data simulating a real connector from an operational data store recieveing product updates as inventory is recieved from each retail store.
 
