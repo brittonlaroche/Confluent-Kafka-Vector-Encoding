@@ -224,6 +224,8 @@ CREATE TABLE `product-content` (
     `price`        DOUBLE,                     
     `season`       STRING,
     `content`      STRING
+) WITH (
+  'value.format' = 'json-registry',
 );
 ```
 
@@ -295,6 +297,8 @@ CREATE TABLE `product-vector` (
     `season`       STRING,
     `content`      STRING,
     `vector`      ARRAY<FLOAT>
+) WITH (
+  'value.format' = 'json-registry',
 );
 ```
 
