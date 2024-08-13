@@ -104,7 +104,9 @@ For the value of the price field set the spec to `price:float64`
 
 
 ### First Steps
-Flink can be accessed through the environments menu on the left-hand side of the Confluent Cloud interface. Select your environment, then navigate to the "Flink SQL" tab, which is located in the middle of the screen, instead of the default "Clusters" tab. As of this GitHub update (June 19th, 2024), the ML_Model function used in this github is in Early Access and is expected to be generally available (GA) soon.
+Flink can be accessed through the environments menu on the left-hand side of the Confluent Cloud interface. Select your environment, then navigate to the "Flink SQL" tab, which is located in the middle of the screen, instead of the default "Clusters" tab. As of this GitHub update (August 13th, 2024), the ML_Model function used in this github is in Early Access.    
+   
+** If you have issues with the ML_Model Function because it is not available for your organization send me an email from your work email address to blaroche@confluent.io with the subject "Requesting EA ML_Model function" and I will add your organization to the EA request list.  You should be good to go with in a day or so provided you do have a cloud orgianization for your company. **   
 
 ![Flink SQL from CC GUI](/img/flinksql.png)
 
