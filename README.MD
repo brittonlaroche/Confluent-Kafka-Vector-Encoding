@@ -55,7 +55,7 @@ This GitHub repository is your gateway to that future. Dive in and discover how 
 |Complete Walkthrough Video|    
 |---------------------------|   
 |[Click here to watch a 25 Minute Video on what you will create](https://www.youtube.com/watch?v=Sv_59o66hRE)|   
-|<a href="https://www.youtube.com/watch?v=Sv_59o66hRE" target="video"><img src="https://img.youtube.com/vi/Sv_59o66hRE/0.jpg" width="900px"></a>|   
+|<a href="https://www.youtube.com/watch?v=Sv_59o66hRE" target="video"><img src="https://img.youtube.com/vi/Sv_59o66hRE/0.jpg" width="700px"></a>|   
    
 ![Flink SQL from CC GUI](/img/DataAugmentation.png)
 
