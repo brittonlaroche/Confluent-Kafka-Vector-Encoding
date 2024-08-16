@@ -109,9 +109,9 @@ For the value of the price field set the spec to `price:float64`
 
 
 ### First Steps
-Flink can be accessed through the environments menu on the left-hand side of the Confluent Cloud interface. Select your environment, then navigate to the "Flink SQL" tab, which is located in the middle of the screen, instead of the default "Clusters" tab. As of this GitHub update (August 13th, 2024), the ML_Model function used in this github is in Early Access.    
+Flink can be accessed through the environments menu on the left-hand side of the Confluent Cloud interface. Select your environment, then navigate to the "Flink SQL" tab, which is located in the middle of the screen, instead of the default "Clusters" tab. As of this GitHub update (August 13th, 2024), the ML_Predict function used in this github is in Early Access.    
    
-**If you have issues with the ML_Model Function because it is not available for your organization send me an email from your work email address to blaroche@confluent.io with the subject "Requesting EA ML_Model function"** I will add your organization to the EA request list.  You should be good to go with in a day or so provided you do have an existing cloud organization for your company.  
+**If you have issues with the ML_Predict Function because it is not available for your organization send me an email from your work email address to blaroche@confluent.io with the subject "Requesting EA ML_Predict function"** I will add your organization to the EA request list.  You should be good to go with in a day or so provided you do have an existing cloud organization for your company.  
 
 ![Flink SQL from CC GUI](/img/flinksql.png)
 
@@ -212,6 +212,21 @@ select  * from `product-updates`, lateral table (ml_predict('vector_encoding', a
 Very cool! We did vector embedding for the article type, and it was pretty effortless.  Now we need to build some content to vector encode, we want to make it more like natural language.  Lets do this by concatenating fields.   
 
 We may also want to enrich this data so we are breaking this down into a few steps.
+
+**Trouble Shooting**
+If you are not getting data back it could be your API key check with your API provider and try a postman or a curl command.   
+[https://platform.openai.com/docs/guides/embeddings](https://platform.openai.com/docs/guides/embeddings)
+
+```
+curl https://api.openai.com/v1/embeddings \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d '{
+    "input": "Your text string goes here",
+    "model": "text-embedding-3-small"
+  }'
+```   
+   
 
 #### 3. Create a product-content table to hold a new content field
 This table is backed up by a kafka topic with the same name for storage.
