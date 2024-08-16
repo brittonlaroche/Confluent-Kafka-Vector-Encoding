@@ -186,6 +186,9 @@ Waiting for statement to be ready. Statement phase is PENDING.
 
 ```
 
+For this step you need an API key.  Theis example uses OPENAI, there are plenty to choose from, but to follow along and if you do not have an API key, no worries, you can get started by using the link below to get your own OPENAI API key.   
+[https://platform.openai.com/docs/quickstart](https://platform.openai.com/docs/quickstart)   
+   
 ```
 set 'sql.secrets.openaikey' = '<your openAI API key>';
 ```
@@ -213,7 +216,7 @@ Very cool! We did vector embedding for the article type, and it was pretty effor
 
 We may also want to enrich this data so we are breaking this down into a few steps.
 
-**Trouble Shooting**
+**Trouble Shooting**   
 If you are not getting data back it could be your API key check with your API provider and try a postman or a curl command.   
 [https://platform.openai.com/docs/guides/embeddings](https://platform.openai.com/docs/guides/embeddings)
 
