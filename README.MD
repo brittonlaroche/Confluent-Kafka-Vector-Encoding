@@ -1,6 +1,11 @@
 # Gen AI First Step: Vector Encoding for Retrieval-Augmented Generation (RAG)
 Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning. RAG is used to generate prompts to the Large Language Model (LLM) with proprietary data, enabling the LLM to make precise recommendations. 
 
+|Complete Walkthrough Video|    
+|---------------------------|   
+|[Click here to watch a 25 Minute Video on what you will create](https://www.youtube.com/watch?v=Sv_59o66hRE)|   
+|<a href="https://www.youtube.com/watch?v=Sv_59o66hRE" target="video"><img src="https://img.youtube.com/vi/Sv_59o66hRE/0.jpg" width="700px" height="480px"></a>|   
+
 In the context of Generative AI, a vector is a mathematical representation of data that captures its semantic meaning. It is a numerical array, where each element of the array represents a feature or characteristic of the data. Vectors are used to encode information in a way that can be easily processed by machine learning models, particularly for tasks that involve understanding and generating natural language.
 
 ### How Vectors Are Used by Gen AI     
@@ -51,11 +56,6 @@ Next the Gennerative AI application will query this vector database. With the us
 Traditional developers often rely on batch processes to vector enocde their data, leading to stale data and a labyrinth of point-to-point ETL integrations that demand constant maintenance. But what if there was a better way? Imagine building and maintaining a vector database with real-time data, free from the cumbersome batch ETL processes.
 
 This GitHub repository is your gateway to that future. Dive in and discover how to revolutionize your approach to data augmentation for Generative AI, making your workflows smarter, faster, and more efficient. Let's get started on transforming the way you handle data!  
-
-|Complete Walkthrough Video|    
-|---------------------------|   
-|[Click here to watch a 25 Minute Video on what you will create](https://www.youtube.com/watch?v=Sv_59o66hRE)|   
-|<a href="https://www.youtube.com/watch?v=Sv_59o66hRE" target="video"><img src="https://img.youtube.com/vi/Sv_59o66hRE/0.jpg" width="700px" height="480px"></a>|   
    
 ![Flink SQL from CC GUI](/img/DataAugmentation.png)
 
