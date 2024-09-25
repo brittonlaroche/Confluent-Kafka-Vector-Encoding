@@ -151,7 +151,7 @@ confluent flink connection create openai_vector_connection
 --api-key 'secret_key'
 ```   
 
-Cutting and pasting the above won't work.  THe confluent cli has an interesting feature that requires everything to be on one line with no carriage returns.  You can modify the following command and it should work.  I pasted it above with carriage returns so it would be easy to see all the flags in this readme.
+Cutting and pasting the above won't work.  The confluent cli has an interesting feature that requires everything to be on one line with no carriage returns.  You can modify the following command and it should work.  I pasted it above with carriage returns so it would be easy to see all the flags in this readme.
 
 ```
 confluent flink connection create openai_vector_connection --cloud aws --region us-west-2 --type openai--endpoint 'https://api.openai.com/v1/embeddings' --api-key 'secret_key'
