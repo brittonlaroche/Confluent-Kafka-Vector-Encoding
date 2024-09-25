@@ -161,12 +161,20 @@ confluent flink shell --compute-pool lfcp-pool-from-gui --environment env-myenv-
 
 Useful documentation for getting started with Flink Shell via the Confluent command line client can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html)
 
-
-
-
-
-
 #### 2. Create the model for vector encoding
+
+After logging into the flink command line we are now ready to create the model for vector encoding.  This is nothing more than data definition language (DDL) that defines the vector encoding service provider, the endpoint and the input and outputs.   
+
+```
+CREATE MODEL `vector_encoding`
+INPUT (input STRING)
+OUTPUT (vector ARRAY<FLOAT>)
+WITH(
+  'TASK' = 'embedding',
+  'PROVIDER' = 'openai',
+  'OPENAI.CONNECTION' = 'openai_vector_connection',
+);
+```
 
 Below is an example of succesful output:  
 ```
@@ -181,22 +189,6 @@ WITH(
 Statement name: cli-2024-05-20-125717-5a83ee6c-1d05-4e27-b7f0-141e0b6bd416
 Statement successfully submitted. 
 Waiting for statement to be ready. Statement phase is PENDING. 
-
-
-```
-
-
-
-```
-CREATE MODEL `vector_encoding`
-INPUT (input STRING)
-OUTPUT (vector ARRAY<FLOAT>)
-WITH(
-  'TASK' = 'classification',
-  'PROVIDER' = 'OPENAI',
-  'OPENAI.ENDPOINT' = 'https://api.openai.com/v1/embeddings',
-  'OPENAI.API_KEY' = '{{sessionconfig/sql.secrets.openaikey}}'
-);
 ```
 
 #### 2.  Now test the model to generate vector encoding against the real-time product updates
