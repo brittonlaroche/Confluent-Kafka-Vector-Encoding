@@ -132,15 +132,18 @@ confluent kafka cluster use lkc-mycluster-from-list
 confluent kafka topic list
 
 ```
-A quick getting started guide can on the flink shell can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).  
+ 
    
-### Set the connection information
 
+#### 1. Set the connection information
 Before we enter the flink environment we need to creat the connection to the endpoint for the vector embedding service.  An example of creating a connection in the confluent cli is provided below:   
    
 ```
 confluent flink connection create my_connection --endpoint 'https://api.openai.com/v1/embeddings' --api_key 'secret_key'
 ```   
+
+After setting the connection information we can now start working in Flink SQL.  A quick getting started guide can on the flink shell can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).  
+   
 You should be able to connect to the Flink Shell with the following.   
    
 ![Flink SQL Copy Login](/img/flinksqllogincopy.png)   
@@ -159,7 +162,7 @@ Useful documentation for getting started with Flink Shell via the Confluent comm
 
 
 
-#### 1. Create the model for vector encoding
+#### 2. Create the model for vector encoding
 ```
 Secret for key OPENAI.API_KEY must be set with 'set sql.secrets.<some_key> = <your_secret>' first.   
 Then refer it in model options with 'OPENAI.API_KEY' = '{{sessionconfig/sql.secrets.<some_key>}}'   
