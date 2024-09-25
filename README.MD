@@ -216,7 +216,7 @@ OUTPUT (vector ARRAY<FLOAT>)
 WITH(
   'TASK' = 'embedding',
   'PROVIDER' = 'openai',
-  'OPENAI.CONNECTION' = 'openai-vector-connection',
+  'OPENAI.CONNECTION' = 'openai-vector-connection'
 );
 ```
 
@@ -228,11 +228,13 @@ OUTPUT (vector ARRAY<FLOAT>)
 WITH(
   'TASK' = 'embedding',
   'PROVIDER' = 'openai',
-  'OPENAI.CONNECTION' = 'openai_vector_connection',
+  'OPENAI.CONNECTION' = 'openai-vector-connection'
 );
-Statement name: cli-2024-05-20-125717-5a83ee6c-1d05-4e27-b7f0-141e0b6bd416
-Statement successfully submitted. 
-Waiting for statement to be ready. Statement phase is PENDING. 
+Statement name: cli-2024-09-25-012912-2683d2ab-2be4-42dd-8257-db85f6f3fbe6
+Statement successfully submitted.
+Waiting for statement to be ready. Statement phase is PENDING.
+Statement phase is COMPLETED.
+Model 'vector_encoding' with version '1' created.
 ```
 
 #### 3.  Now test the model to generate vector encoding against the real-time product updates
