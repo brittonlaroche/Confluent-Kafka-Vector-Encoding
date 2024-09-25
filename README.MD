@@ -135,8 +135,12 @@ confluent kafka topic list
 A quick getting started guide can on the flink shell can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).  
    
 ### Set the connection information
-confluent flink connection create my_connection --endpoint 'https://api.openai.com/v1' --api_key 'secret_key'
+
+Before we enter the flink environment we need to creat the connection to the endpoint for the vector embedding service.  An example of creating a connection in the confluent cli is provided below:   
    
+```
+confluent flink connection create my_connection --endpoint 'https://api.openai.com/v1/embeddings' --api_key 'secret_key'
+```   
 You should be able to connect to the Flink Shell with the following.   
    
 ![Flink SQL Copy Login](/img/flinksqllogincopy.png)   
