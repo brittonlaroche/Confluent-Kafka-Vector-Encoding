@@ -134,6 +134,8 @@ confluent kafka topic list
 ```
 A quick getting started guide can on the flink shell can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).  
    
+### Set the connection information
+confluent flink connection create my_connection --endpoint 'https://api.openai.com/v1' --api_key 'secret_key'
    
 You should be able to connect to the Flink Shell with the following.   
    
