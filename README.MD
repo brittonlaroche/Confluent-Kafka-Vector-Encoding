@@ -176,7 +176,7 @@ confluent flink connection create openai-vector-connection --cloud aws --region 
 Here is what success looks like:   
 
 ```
-confluent flink connection create openai-vector-connection --cloud aws --region us-west-2 --type openai --endpoint 'https://api.openai.com/v1/embeddings' --api-key 'sk-proj-GZuhy1lt8BdZRTgM3xqbTthKQgKIH1'
+confluent flink connection create openai-vector-connection --cloud aws --region us-west-2 --environment my-env-id --type openai --endpoint 'https://api.openai.com/v1/embeddings' --api-key 'sk-proj-GZuhy1lt8BdZRTgM3xqbTthKQgKIH1'
 +---------------+--------------------------------------+
 | Creation Date | 2024-09-25 06:03:39.768738           |
 |               | +0000 UTC                            |
