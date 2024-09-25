@@ -173,7 +173,7 @@ confluent flink connection create openai-vector-connection --cloud aws --region 
 +---------------+--------------------------------------+
 ```   
 
-Anything less than success should give you a concise error message with the flags what they mean and what you messed up.  It should aslo provide you with an example of what it should look like.   
+Anything less than success should give you a concise error message with the flags what they mean and what you messed up.  It should also provide you with an example of what it should look like.   
    
 After setting the connection information we can now start working in Flink SQL.  A quick getting started guide can on the flink shell can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).  
    
