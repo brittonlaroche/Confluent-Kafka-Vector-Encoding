@@ -158,6 +158,23 @@ Cutting and pasting the above won't work.  The confluent cli has an interesting 
 confluent flink connection create openai-vector-connection --cloud aws --region us-west-2 --type openai --endpoint 'https://api.openai.com/v1/embeddings' --api-key 'secret_key'
 ```
 
+Here is what success looks like:   
+
+```
+confluent flink connection create openai-vector-connection --cloud aws --region us-west-2 --type openai --endpoint 'https://api.openai.com/v1/embeddings' --api-key 'sk-proj-GZuhy1lt8BdZRTgM3xqbTthKQgKIH1'
++---------------+--------------------------------------+
+| Creation Date | 2024-09-25 06:03:39.768738           |
+|               | +0000 UTC                            |
+| Name          | openai-vector-connection             |
+| Type          | OPENAI                               |
+| Endpoint      | https://api.openai.com/v1/embeddings |
+| Data          | <REDACTED>                           |
+| Status        |                                      |
++---------------+--------------------------------------+
+```   
+
+Anything less than success should give you a concise error message with the flags what they mean and what you messed up.  It should aslo provide you with an example of what it should look like.   
+   
 After setting the connection information we can now start working in Flink SQL.  A quick getting started guide can on the flink shell can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).  
    
 You should be able to connect to the Flink Shell with the following.   
