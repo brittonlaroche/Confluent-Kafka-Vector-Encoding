@@ -136,10 +136,14 @@ confluent kafka topic list
    
 
 #### 1. Set the connection information
-Before we enter the flink environment we need to creat the connection to the endpoint for the vector embedding service.  An example of creating a connection in the confluent cli is provided below:   
+Before we enter the flink environment we need to create the connection to the endpoint for the vector embedding service.  For this step you need an API key.  Theis example uses OPENAI, there are plenty to choose from, but to follow along and if you do not have an API key, no worries, you can get started by using the link below to get your own OPENAI API key.   
+[https://platform.openai.com/docs/quickstart](https://platform.openai.com/docs/quickstart)
+   
+
+An example of creating a connection in the confluent cli is provided below:    
    
 ```
-confluent flink connection create my_connection --endpoint 'https://api.openai.com/v1/embeddings' --api_key 'secret_key'
+confluent flink connection create openai_vector_connection --endpoint 'https://api.openai.com/v1/embeddings' --api_key 'secret_key'
 ```   
 
 After setting the connection information we can now start working in Flink SQL.  A quick getting started guide can on the flink shell can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).  
@@ -163,30 +167,16 @@ Useful documentation for getting started with Flink Shell via the Confluent comm
 
 
 #### 2. Create the model for vector encoding
+
+Below is an example of succesful output:  
 ```
-Secret for key OPENAI.API_KEY must be set with 'set sql.secrets.<some_key> = <your_secret>' first.   
-Then refer it in model options with 'OPENAI.API_KEY' = '{{sessionconfig/sql.secrets.<some_key>}}'   
-   
-   
-set 'sql.secrets.openaikey' = 'sk-Babbmpndff5CkyrFuuVTBCiKyrAaaaBBBwwwwwxxxxdsssaa';
-Statement successfully submitted.
-Statement phase is COMPLETED.
-configuration updated successfully.
-+-----------------------+-----------------------------------------------------+
-|          Key          |                        Value                        |
-+-----------------------+-----------------------------------------------------+
-| sql.secrets.openaikey | sk-Babbmpndff5CkyrFuuVTBCiKyrAaaaBBBwwwwwxxxxdsssaa |
-+-----------------------+-----------------------------------------------------+
-
-
 CREATE MODEL `vector_encoding`
 INPUT (input STRING)
 OUTPUT (vector ARRAY<FLOAT>)
 WITH(
-  'TASK' = 'classification',
-  'PROVIDER' = 'OPENAI',
-  'OPENAI.ENDPOINT' = 'https://api.openai.com/v1/embeddings',
-  'OPENAI.API_KEY' = '{{sessionconfig/sql.secrets.openaikey}}'
+  'TASK' = 'embedding',
+  'PROVIDER' = 'openai',
+  'OPENAI.CONNECTION' = 'openai_vector_connection',
 );
 Statement name: cli-2024-05-20-125717-5a83ee6c-1d05-4e27-b7f0-141e0b6bd416
 Statement successfully submitted. 
@@ -195,12 +185,7 @@ Waiting for statement to be ready. Statement phase is PENDING.
 
 ```
 
-For this step you need an API key.  Theis example uses OPENAI, there are plenty to choose from, but to follow along and if you do not have an API key, no worries, you can get started by using the link below to get your own OPENAI API key.   
-[https://platform.openai.com/docs/quickstart](https://platform.openai.com/docs/quickstart)   
-   
-```
-set 'sql.secrets.openaikey' = '<your openAI API key>';
-```
+
 
 ```
 CREATE MODEL `vector_encoding`
