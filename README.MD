@@ -141,12 +141,15 @@ Before we enter the flink environment we need to create the connection to the en
    
 When creating a connection be sure to give it a recognizable name something that includes the provider and type of sevice like 'openai-vector-connection' for example.  Note the name needs to contain lowercase alphanumeric characters and hyphens only and can only start with alphabetic characters. Maximum length is 100 characters.   
 
+The environment flag specifies the environment where flink sql is running. Its the one we created in the steps above in the Confluent Cloud gui. I call it 'my-env-name' in the example below
+
 An example of creating a connection in the confluent cli is provided below:    
    
 ```
 confluent flink connection create openai-vector-connection 
 --cloud aws 
 --region us-west-2 
+--environment my-env-name         
 --type openai
 --endpoint 'https://api.openai.com/v1/embeddings' 
 --api-key 'secret_key'
@@ -155,7 +158,7 @@ confluent flink connection create openai-vector-connection
 Cutting and pasting the above won't work.  The confluent cli has an interesting feature that requires everything to be on one line with no carriage returns.  You can modify the following command and it should work.  I pasted it above with carriage returns so it would be easy to see all the flags in this readme.
 
 ```
-confluent flink connection create openai-vector-connection --cloud aws --region us-west-2 --type openai --endpoint 'https://api.openai.com/v1/embeddings' --api-key 'secret_key'
+confluent flink connection create openai-vector-connection --cloud aws --region us-west-2 --environment my-env-name --type openai --endpoint 'https://api.openai.com/v1/embeddings' --api-key 'secret_key'
 ```
 
 Here is what success looks like:   
