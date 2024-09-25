@@ -191,7 +191,7 @@ Statement successfully submitted.
 Waiting for statement to be ready. Statement phase is PENDING. 
 ```
 
-#### 2.  Now test the model to generate vector encoding against the real-time product updates
+#### 3.  Now test the model to generate vector encoding against the real-time product updates
 
 ```
 select  * from `product-updates`, lateral table (ml_predict('vector_encoding', articleType));
