@@ -154,7 +154,7 @@ confluent flink connection create openai_vector_connection
 Cutting and pasting the above won't work.  The confluent cli has an interesting feature that requires everything to be on one line with no carriage returns.  You can modify the following command and it should work.  I pasted it above with carriage returns so it would be easy to see all the flags in this readme.
 
 ```
-confluent flink connection create openai_vector_connection --cloud aws --region us-west-2 --type openai--endpoint 'https://api.openai.com/v1/embeddings' --api-key 'secret_key'
+confluent flink connection create openai_vector_connection --cloud aws --region us-west-2 --type openai --endpoint 'https://api.openai.com/v1/embeddings' --api-key 'secret_key'
 ```
 
 After setting the connection information we can now start working in Flink SQL.  A quick getting started guide can on the flink shell can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).  
