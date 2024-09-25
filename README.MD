@@ -143,7 +143,7 @@ Before we enter the flink environment we need to create the connection to the en
 An example of creating a connection in the confluent cli is provided below:    
    
 ```
-confluent flink connection create openai_vector_connection --endpoint 'https://api.openai.com/v1/embeddings' --api_key 'secret_key'
+confluent flink connection create openai_vector_connection --endpoint 'https://api.openai.com/v1/embeddings' --api-key 'secret_key'
 ```   
 
 After setting the connection information we can now start working in Flink SQL.  A quick getting started guide can on the flink shell can be found [here](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-shell.html#step-1-log-in-to-ccloud-with-the-confluent-cli).  
