@@ -10,4 +10,5 @@
     "key.converter":"io.confluent.connect.json.JsonSchemaConverter",
     "topics":"product-vector",
     "value.converter":"io.confluent.connect.json.JsonSchemaConverter"
-```}
+}
+```
