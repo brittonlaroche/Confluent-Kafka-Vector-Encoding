@@ -7,31 +7,158 @@
       "name": "claim_id",
       "type": "string",
       "arg.properties": {
-        "values": ["CLM1000", "CLM1001", "CLM1002", "CLM1003", "CLM1004"]
+        "regex": "CLM\\d{4}",
+        "unique": true,
+        "number": {
+          "start": 1000,
+          "end": 1099
+        }
       }
     },
     {
       "name": "member_id",
       "type": "string",
       "arg.properties": {
-        "values": ["member-001", "member-002", "member-003", "member-004", "member-005",
-                    "member-006", "member-007", "member-008", "member-009", "member-010",
-                    "member-011", "member-012", "member-013", "member-014", "member-015",
-                    "member-016", "member-017", "member-018", "member-019", "member-020"]
+        "values": [
+          "member-001", "member-002", "member-003", "member-004", "member-005",
+          "member-006", "member-007", "member-008", "member-009", "member-010",
+          "member-011", "member-012", "member-013", "member-014", "member-015",
+          "member-016", "member-017", "member-018", "member-019", "member-020"
+        ]
       }
     },
     {
       "name": "diagnosis_code",
       "type": "string",
       "arg.properties": {
-        "values": ["DX001", "DX002", "DX003", "DX004", "DX005"]
+        "regex": "DX\\d{3}",
+        "unique": true,
+        "number": {
+          "start": 1,
+          "end": 100
+        }
       }
     },
     {
       "name": "diagnosis_description",
       "type": "string",
       "arg.properties": {
-        "values": ["Anxiety Disorder", "Substance Abuse", "STD Screening", "Diabetes Type II", "Hypertension"]
+        "values": [
+          "Colon Cancer",
+          "Hemorrhoids",
+          "Kidney Stones",
+          "Meningitis",
+          "Cancerous Tumor",
+          "Gangrene",
+          "Leukemia",
+          "Lung Cancer",
+          "Kidney Failure",
+          "Gallstones",
+          "Appendicitis",
+          "Prostate Cancer",
+          "Cataracts",
+          "Morbid Obesity",
+          "Severe Burns",
+          "Spinal Infection",
+          "Bone Marrow Disease",
+          "Liver Failure",
+          "Coronary Artery Disease",
+          "Breast Cancer",
+          "Uterine Fibroids",
+          "Colon Disease",
+          "Bladder Cancer",
+          "Brain Tumor",
+          "Spinal Cord Injury",
+          "Hip Osteoarthritis",
+          "Knee Osteoarthritis",
+          "Heart Arrhythmia",
+          "Blocked Arteries",
+          "Pregnancy Complications",
+          "Organ Rejection",
+          "Thyroid Disorder",
+          "Joint Damage",
+          "Excessive Weight",
+          "Facial Trauma",
+          "Melanoma",
+          "Breast Reconstruction Needs",
+          "Third-degree Burns",
+          "Airway Blockage",
+          "Heart Valve Disease",
+          "Aortic Aneurysm",
+          "Digestive Disorders",
+          "End-stage Renal Disease",
+          "Inguinal Hernia",
+          "Myopia",
+          "Obstructive Sleep Apnea",
+          "Hearing Impairment",
+          "Epilepsy",
+          "Chronic Back Pain",
+          "Endometriosis",
+          "Seizure Disorder",
+          "Fibroid Tumors",
+          "Mitral Valve Prolapse",
+          "Rectal Bleeding",
+          "Degenerative Joint Disease",
+          "Cirrhosis",
+          "Pulmonary Fibrosis",
+          "Meniscal Tear",
+          "Ovarian Cysts",
+          "Pancreatitis",
+          "Hyperparathyroidism",
+          "Prostatic Hyperplasia",
+          "Retinal Detachment",
+          "Deviated Septum",
+          "Chronic Sinusitis",
+          "Recurrent Tonsillitis",
+          "Varicose Veins",
+          "Male Sterilization",
+          "Impacted Wisdom Teeth",
+          "ACL Tear",
+          "Ruptured Appendix",
+          "Bladder Prolapse",
+          "Fractured Bone",
+          "Carpal Tunnel Syndrome",
+          "Lens Opacity",
+          "Cesarean Section",
+          "Cholelithiasis",
+          "Corneal Opacity",
+          "Dermoid Cyst",
+          "Non-healing Wound",
+          "Heart Block",
+          "Otitis Media",
+          "Uterine Anomalies",
+          "Esophageal Cancer",
+          "Morbid Obesity",
+          "Cardiomyopathy",
+          "Hiatal Hernia",
+          "Uterine Polyps",
+          "Nephrotic Syndrome",
+          "Astigmatism",
+          "Hepatic Tumor",
+          "Kidney Malfunction",
+          "Ovarian Neoplasm",
+          "Pancreatic Insufficiency",
+          "Parotid Gland Tumor",
+          "Peripheral Vascular Disease",
+          "Nasal Obstruction",
+          "Shoulder Arthritis",
+          "Coronary Artery Disease",
+          "Thyroid Nodule",
+          "Tubal Pregnancy",
+          "Bladder Diverticulum",
+          "Ventricular Dysfunction"
+        ]
+      }
+    },
+    {
+      "name": "diagnosis_date",
+      "type": "string",
+      "logicalType": "date",
+      "arg.properties": {
+        "date": {
+          "start": "2020-01-01",
+          "end": "2023-12-31"
+        }
       }
     },
     {
@@ -67,7 +194,13 @@
       "type": ["null", "string"],
       "default": null,
       "arg.properties": {
-        "values": ["Pre-existing condition", "Policy exclusion", "Lack of medical necessity"],
+        "values": [
+          "Pre-existing condition",
+          "Policy exclusion",
+          "Lack of medical necessity",
+          "Experimental treatment",
+          "Not covered under plan"
+        ],
         "if": {
           "field": "adjudication_outcome",
           "in": ["Partial", "Denied"]
