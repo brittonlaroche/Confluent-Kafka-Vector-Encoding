@@ -158,12 +158,12 @@ For example if we are working in the environment 'GenAI' then the environment id
 An example of creating a connection in the confluent cli is provided below:    
    
 ```
-confluent flink connection create openai-vector-connection 
---cloud aws 
---region us-west-2 
---environment my-env-id         
---type openai
---endpoint 'https://api.openai.com/v1/embeddings' 
+confluent flink connection create openai-vector-connection \
+--cloud aws \
+--region us-west-2 \
+--environment my-env-id \
+--type openai \
+--endpoint 'https://api.openai.com/v1/embeddings' \
 --api-key 'secret_key'
 ```   
 
