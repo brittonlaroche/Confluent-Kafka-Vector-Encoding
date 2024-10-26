@@ -1,0 +1,78 @@
+{
+  "namespace": "com.chaoscontrolmedical.claims",
+  "type": "record",
+  "name": "ClaimDiagnosis",
+  "fields": [
+    {
+      "name": "claim_id",
+      "type": "string",
+      "arg.properties": {
+        "values": ["CLM1000", "CLM1001", "CLM1002", "CLM1003", "CLM1004"]
+      }
+    },
+    {
+      "name": "member_id",
+      "type": "string",
+      "arg.properties": {
+        "values": ["member-001", "member-002", "member-003", "member-004", "member-005",
+                    "member-006", "member-007", "member-008", "member-009", "member-010",
+                    "member-011", "member-012", "member-013", "member-014", "member-015",
+                    "member-016", "member-017", "member-018", "member-019", "member-020"]
+      }
+    },
+    {
+      "name": "diagnosis_code",
+      "type": "string",
+      "arg.properties": {
+        "values": ["DX001", "DX002", "DX003", "DX004", "DX005"]
+      }
+    },
+    {
+      "name": "diagnosis_description",
+      "type": "string",
+      "arg.properties": {
+        "values": ["Anxiety Disorder", "Substance Abuse", "STD Screening", "Diabetes Type II", "Hypertension"]
+      }
+    },
+    {
+      "name": "lab_results",
+      "type": "string",
+      "arg.properties": {
+        "values": ["Positive", "Negative", "Inconclusive", "Normal", "Abnormal"]
+      }
+    },
+    {
+      "name": "adjudication_status",
+      "type": "string",
+      "arg.properties": {
+        "values": ["Not started", "In process", "Complete"],
+        "weights": [0.5, 0.4, 0.1]
+      }
+    },
+    {
+      "name": "adjudication_outcome",
+      "type": ["null", "string"],
+      "default": null,
+      "arg.properties": {
+        "values": ["Paid in full", "Partial", "Denied"],
+        "weights": [0.6, 0.3, 0.1],
+        "if": {
+          "field": "adjudication_status",
+          "equals": "Complete"
+        }
+      }
+    },
+    {
+      "name": "denial_reason",
+      "type": ["null", "string"],
+      "default": null,
+      "arg.properties": {
+        "values": ["Pre-existing condition", "Policy exclusion", "Lack of medical necessity"],
+        "if": {
+          "field": "adjudication_outcome",
+          "in": ["Partial", "Denied"]
+        }
+      }
+    }
+  ]
+}
