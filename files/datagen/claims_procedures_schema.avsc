@@ -14,24 +14,58 @@
       "name": "member_id",
       "type": "string",
       "arg.properties": {
-        "values": ["member-001", "member-002", "member-003", "member-004", "member-005",
-                    "member-006", "member-007", "member-008", "member-009", "member-010",
-                    "member-011", "member-012", "member-013", "member-014", "member-015",
-                    "member-016", "member-017", "member-018", "member-019", "member-020"]
+        "values": [
+          "member-001", "member-002", "member-003", "member-004", "member-005",
+          "member-006", "member-007", "member-008", "member-009", "member-010",
+          "member-011", "member-012", "member-013", "member-014", "member-015",
+          "member-016", "member-017", "member-018", "member-019", "member-020"
+        ]
       }
     },
     {
       "name": "procedure_code",
       "type": "string",
       "arg.properties": {
-        "values": ["PROC001", "PROC002", "PROC003", "PROC004", "PROC005"]
+        "values": [
+          "PROC001", "PROC002", "PROC003", "PROC004", "PROC005",
+          "PROC006", "PROC007", "PROC008", "PROC009", "PROC010",
+          "PROC011", "PROC012", "PROC013", "PROC014", "PROC015",
+          "PROC016", "PROC017", "PROC018", "PROC019", "PROC020",
+          "PROC021", "PROC022", "PROC023", "PROC024", "PROC025"
+        ]
       }
     },
     {
       "name": "procedure_description",
       "type": "string",
       "arg.properties": {
-        "values": ["Colonoscopy", "Hemorrhoid Removal", "Blood Test", "X-Ray Imaging", "Appendectomy"]
+        "values": [
+          "Colonoscopy",
+          "Hemorrhoid Removal",
+          "Kidney Stone Removal",
+          "Spinal Tap",
+          "Biopsy",
+          "Amputation",
+          "Chemotherapy",
+          "Radiation Therapy",
+          "Dialysis",
+          "Gallbladder Removal",
+          "Appendectomy",
+          "Prostate Exam",
+          "Cataract Surgery",
+          "Gastric Bypass Surgery",
+          "Skin Graft",
+          "Lumbar Puncture",
+          "Bone Marrow Transplant",
+          "Liver Transplant",
+          "Heart Bypass Surgery",
+          "Mastectomy",
+          "Hysterectomy",
+          "Colostomy",
+          "Bladder Surgery",
+          "Brain Surgery",
+          "Spinal Fusion"
+        ]
       }
     },
     {
@@ -39,7 +73,21 @@
       "type": "string",
       "logicalType": "date",
       "arg.properties": {
-        "date": {"start": "2021-01-01", "end": "2023-12-31"}
+        "date": {
+          "start": "2021-01-01",
+          "end": "2023-12-31"
+        }
+      }
+    },
+    {
+      "name": "procedure_cost",
+      "type": "double",
+      "arg.properties": {
+        "number": {
+          "min": 500.00,
+          "max": 250000.00,
+          "precision": 2
+        }
       }
     },
     {
@@ -68,7 +116,13 @@
       "type": ["null", "string"],
       "default": null,
       "arg.properties": {
-        "values": ["Insufficient coverage", "Procedure not covered", "Incorrect coding"],
+        "values": [
+          "Insufficient coverage",
+          "Procedure not covered",
+          "Incorrect coding",
+          "Pre-existing condition",
+          "Lack of prior authorization"
+        ],
         "if": {
           "field": "adjudication_outcome",
           "in": ["Partial", "Denied"]
