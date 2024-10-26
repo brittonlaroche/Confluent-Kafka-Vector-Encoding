@@ -7,21 +7,57 @@
       "name": "claim_id",
       "type": "string",
       "arg.properties": {
-        "values": ["CLM1000", "CLM1001", "CLM1002", "CLM1003", "CLM1004"]
+        "regex": "CLM\\d{4}",
+        "unique": true,
+        "number": {
+          "start": 1000,
+          "end": 1099
+        }
       }
     },
     {
       "name": "provider_id",
       "type": "string",
       "arg.properties": {
-        "regex": "PRV\\d{4}"
+        "regex": "PRV\\d{4}",
+        "unique": true,
+        "number": {
+          "start": 2000,
+          "end": 2099
+        }
       }
     },
     {
       "name": "provider_name",
       "type": "string",
       "arg.properties": {
-        "values": ["Dr. Smith", "Dr. Johnson", "Dr. Williams", "Dr. Brown", "Dr. Jones"]
+        "values": [
+          "Dr. Sam Smith",
+          "Dr. John Johnson",
+          "Dr. Bill Williams",
+          "Dr. James Brown",
+          "Dr. Jim Jones",
+          "Dr. Ima Hack",
+          "Dr. Mike Gross",
+          "Dr. Greg Guts",
+          "Dr. Scott Blade",
+          "Dr. Bill Butcher",
+          "Dr. Greg Grewsome",
+          "Dr. Scott Sharp",
+          "Dr. Max Payne",
+          "Dr. James Slicer",
+          "Dr. Deepak Cutter",
+          "Dr. Brook Bones",
+          "Dr. Levi Scar",
+          "Dr. Noah Good",
+          "Dr. Ima Fixit",
+          "Dr. Kim Yu",
+          "Dr. Steven Strange",
+          "Dr. Debbie Doogie",
+          "Dr. Intha House",
+          "Dr. Wat Hoo",
+          "Dr. Uranot Feelgood"
+        ]
       }
     },
     {
@@ -36,7 +72,33 @@
       "name": "facility_name",
       "type": "string",
       "arg.properties": {
-        "values": ["General Hospital", "City Clinic", "Regional Medical Center"]
+        "values": [
+          "General Hospital",
+          "City Clinic",
+          "Regional Medical Center",
+          "Sacred Heart Hospital",
+          "St. Elsewhere Hospital",
+          "Grey Sloan Memorial",
+          "Shady Acres Mental Health Center",
+          "Springfield Penitentiary Infirmary",
+          "Alcatraz Medical Unit",
+          "Arkham Asylum",
+          "Iron Heights Correctional Facility",
+          "Blackgate Penitentiary Medical Ward",
+          "San Quentin Prison Hospital",
+          "Belle Reve Medical Center",
+          "Metropolis General",
+          "Gotham General Hospital",
+          "County Jail Medical Unit",
+          "Federal Correctional Institution Clinic",
+          "Sunny Meadows Retirement Home",
+          "Hope Memorial Hospital",
+          "Pleasant Valley Correctional Center",
+          "Oakdale Juvenile Detention Medical Unit",
+          "Harmony Hills Rehabilitation Center",
+          "Riverbend Maximum Security Hospital",
+          "Liberty County Correctional Facility Clinic"
+        ]
       }
     },
     {
@@ -65,7 +127,13 @@
       "type": ["null", "string"],
       "default": null,
       "arg.properties": {
-        "values": ["Out-of-network provider", "Incomplete documentation", "Unauthorized service"],
+        "values": [
+          "Out-of-network provider",
+          "Incomplete documentation",
+          "Unauthorized service",
+          "Incorrect billing code",
+          "Provider not licensed"
+        ],
         "if": {
           "field": "adjudication_outcome",
           "in": ["Partial", "Denied"]
