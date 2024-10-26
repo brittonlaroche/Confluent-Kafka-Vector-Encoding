@@ -1,0 +1,76 @@
+{
+  "namespace": "com.chaoscontrolmedical.claims",
+  "type": "record",
+  "name": "ClaimProvider",
+  "fields": [
+    {
+      "name": "claim_id",
+      "type": "string",
+      "arg.properties": {
+        "values": ["CLM1000", "CLM1001", "CLM1002", "CLM1003", "CLM1004"]
+      }
+    },
+    {
+      "name": "provider_id",
+      "type": "string",
+      "arg.properties": {
+        "regex": "PRV\\d{4}"
+      }
+    },
+    {
+      "name": "provider_name",
+      "type": "string",
+      "arg.properties": {
+        "values": ["Dr. Smith", "Dr. Johnson", "Dr. Williams", "Dr. Brown", "Dr. Jones"]
+      }
+    },
+    {
+      "name": "in_network",
+      "type": "boolean",
+      "arg.properties": {
+        "values": [true, false],
+        "weights": [0.8, 0.2]
+      }
+    },
+    {
+      "name": "facility_name",
+      "type": "string",
+      "arg.properties": {
+        "values": ["General Hospital", "City Clinic", "Regional Medical Center"]
+      }
+    },
+    {
+      "name": "adjudication_status",
+      "type": "string",
+      "arg.properties": {
+        "values": ["Not started", "In process", "Complete"],
+        "weights": [0.5, 0.4, 0.1]
+      }
+    },
+    {
+      "name": "adjudication_outcome",
+      "type": ["null", "string"],
+      "default": null,
+      "arg.properties": {
+        "values": ["Paid in full", "Partial", "Denied"],
+        "weights": [0.6, 0.3, 0.1],
+        "if": {
+          "field": "adjudication_status",
+          "equals": "Complete"
+        }
+      }
+    },
+    {
+      "name": "denial_reason",
+      "type": ["null", "string"],
+      "default": null,
+      "arg.properties": {
+        "values": ["Out-of-network provider", "Incomplete documentation", "Unauthorized service"],
+        "if": {
+          "field": "adjudication_outcome",
+          "in": ["Partial", "Denied"]
+        }
+      }
+    }
+  ]
+}
