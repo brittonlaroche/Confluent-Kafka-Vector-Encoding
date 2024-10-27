@@ -1,25 +1,19 @@
 {
   "namespace": "com.chaoscontrolmedical",
   "type": "record",
-  "name": "Member",
+  "name": "Membership",
   "fields": [
     {
-      "name": "resourceType",
+      "name": "member_id",
       "type": "string",
-      "default": "Patient"
-    },
-    {
-      "name": "id",
-      "type": "string",
-      "doc": "Member ID",
+      "doc": "Primary Member ID",
       "arg.properties": {
         "regex": "member-\\d{3}",
-        "examples": [
-          "member-001", "member-002", "member-003", "member-004", "member-005",
-          "member-006", "member-007", "member-008", "member-009", "member-010",
-          "member-011", "member-012", "member-013", "member-014", "member-015",
-          "member-016", "member-017", "member-018", "member-019", "member-020"
-        ]
+        "number": {
+          "start": 1,
+          "end": 20,
+          "format": "member-%03d"
+        }
       }
     },
     {
@@ -47,9 +41,10 @@
             "arg.properties": {
               "values": [
                 "Pat", "Shay", "Addison", "Caelen", "Blaine",
-                "Hadley", "Indigo", "Jean", "Kit",
-                "Ray", "Remi"
-              ]
+                "Hadley", "Indigo", "Jean", "Kit", "Ray", "Remi"
+              ],
+              "minItems": 1,
+              "maxItems": 1
             }
           }
         ]
@@ -59,7 +54,7 @@
       "name": "gender",
       "type": "string",
       "arg.properties": {
-        "values": ["male", "female"]
+        "values": ["male", "female", "non-binary"]
       }
     },
     {
@@ -69,7 +64,7 @@
       "arg.properties": {
         "date": {
           "start": "1940-01-01",
-          "end": "2005-12-31"
+          "end": "2000-12-31"
         }
       }
     },
@@ -87,8 +82,10 @@
             },
             "arg.properties": {
               "values": [
-                "123 Main St", "456 Elm St", "789 Oak Ave"
-              ]
+                "123 Main St", "456 Elm St", "789 Oak Ave", "321 Maple Rd"
+              ],
+              "minItems": 1,
+              "maxItems": 1
             }
           },
           {
@@ -129,27 +126,6 @@
       }
     },
     {
-      "name": "identifier",
-      "type": {
-        "type": "record",
-        "name": "Identifier",
-        "fields": [
-          {
-            "name": "system",
-            "type": "string",
-            "default": "http://chaoscontrolmedical.com/members"
-          },
-          {
-            "name": "value",
-            "type": "string",
-            "arg.properties": {
-              "regex": "M\\d{3}"
-            }
-          }
-        ]
-      }
-    },
-    {
       "name": "plan",
       "type": {
         "type": "record",
@@ -175,15 +151,15 @@
           },
           {
             "name": "planEndDate",
-            "type": ["string", "null"],
+            "type": ["null", "string"],
             "logicalType": "date",
+            "default": null,
             "arg.properties": {
               "date": {
                 "start": "2023-01-01",
                 "end": "2025-12-31"
               }
-            },
-            "default": null
+            }
           },
           {
             "name": "coverageName",
@@ -210,18 +186,18 @@
       }
     },
     {
-      "name": "dependents",
+      "name": "familyMembers",
       "type": {
         "type": "array",
         "items": {
           "type": "record",
-          "name": "Dependent",
+          "name": "FamilyMember",
           "fields": [
             {
               "name": "relationship",
               "type": "string",
               "arg.properties": {
-                "values": ["spouse", "child", "partner"]
+                "values": ["spouse", "child", "partner", "parent", "other"]
               }
             },
             {
@@ -232,7 +208,7 @@
               "name": "gender",
               "type": "string",
               "arg.properties": {
-                "values": ["male", "female"]
+                "values": ["male", "female", "non-binary"]
               }
             },
             {
@@ -247,11 +223,11 @@
               }
             }
           ]
-        },
-        "arg.properties": {
-          "minItems": 0,
-          "maxItems": 3
         }
+      },
+      "arg.properties": {
+        "minItems": 0,
+        "maxItems": 5
       },
       "default": []
     }
