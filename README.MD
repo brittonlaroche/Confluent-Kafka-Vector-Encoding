@@ -146,7 +146,7 @@ confluent kafka topic list
    
 
 #### 1. Set the connection information
-Before we enter the flink environment we need to create the connection to the endpoint for the vector embedding service.  For this step you need an API key.  Theis example uses OPENAI, there are plenty to choose from, but to follow along and if you do not have an API key, no worries, you can get started by using the link below to get your own OPENAI API key.   
+Before we enter the flink environment we need to create the connection to the endpoint for the vector embedding service.  For this step you need an API key.  This example uses OPENAI, there are plenty to choose from, but to follow along and if you do not have an API key, no worries, you can get started by using the link below to get your own OPENAI API key.   
 [https://platform.openai.com/docs/quickstart](https://platform.openai.com/docs/quickstart)
    
 When creating a connection be sure to give it a recognizable name something that includes the provider and type of sevice like 'openai-vector-connection' for example.  Note the name needs to contain lowercase alphanumeric characters and hyphens only and can only start with alphabetic characters. Maximum length is 100 characters.   
