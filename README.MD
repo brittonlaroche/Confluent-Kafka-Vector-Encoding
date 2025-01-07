@@ -1,7 +1,7 @@
+# Step 1. Data Augmentation
 # Gen AI First Step: Inference: Vector Encoding for Retrieval-Augmented Generation (RAG)
 Embark on an exciting journey into the world of Retrieval-Augmented Generation (RAG) for Generative AI! The foundational step in this innovative process is creating a vector store, a dynamic tool designed for performing vector or semantic searches based on meaning. RAG is used to generate prompts to the Large Language Model (LLM) with proprietary data, enabling the LLM to make precise recommendations. 
 
-# Step 1. Data Augmentation
 
 |Complete Walkthrough Video|    
 |---------------------------|   
