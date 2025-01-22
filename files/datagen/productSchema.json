@@ -8,7 +8,7 @@
                 "arg.properties": {
                     "range": {
                         "min": 1,
-                        "max": 400
+                        "max": 50
                     }
                 }
             }},
