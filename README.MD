@@ -299,7 +299,7 @@ CREATE TABLE `product-content` (
 
 #### 4. Insert data into the product content table
 Lets put in a new field that seems more like a natual language description that we can send to the vector encoding service.  We will create a field called "content" which concatenates all the fields except count which is the number of items in the store.  We can check inventory in a post processing step.
-For now we need a product description the price, store number and product id.
+For now we need a product description the price, store number and product id. 
 
 ```
 insert into `product-content` (
