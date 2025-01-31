@@ -1,8 +1,8 @@
 
 |Complete Walkthrough Video|    
 |---------------------------|   
-|[Click here to watch a 25 Minute Video on what you will create](https://www.youtube.com/watch?v=Sv_59o66hRE)|   
-|<a href="https://www.youtube.com/watch?v=Sv_59o66hRE" target="video"><img src="https://img.youtube.com/vi/Sv_59o66hRE/0.jpg" width="700px" height="480px"></a>|
+|[Click here to watch a 25 Minute Video on what you will create](https://youtu.be/uYxm7Yg7rgo)|   
+|<a href="https://youtu.be/uYxm7Yg7rgo" target="video"><img src="https://img.youtube.com/vi/Sv_59o66hRE/0.jpg" width="700px" height="480px"></a>|
 
 ```json
 {
