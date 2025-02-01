@@ -382,7 +382,18 @@ To view and stop running Flink SQL statements click the "running statements" tab
 ![Flink SQL from CC GUI](/img/flinkStatements.png)
 
 #### 7.  Create a sink connector for your favorite vector database
-My favorite is MongoDB Atlas Vector Search. I created the `product-vector` table with additional fields because MongoDB can create a vector index on the vector field and still be able to query the rest of the fields like a regular database.  MongoDB combines the Operational Data Store (ODS) and the Vector search in one place!  The sink connector will create a document. There is a powerful synergy between Kafka, Confluent and MongoDB that we like to call Kafcongo.
+
+## Choose Your Vector Database Wisely
+I highly recommend using an existing cloud native database that can run in any cloud provider.  Most of them are capable of maintaining a Vector index for searching.  My top three picks would be [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-vector-search), [Couchbase Capella](https://www.couchbase.com/products/vector-search/) and [Elasticsearch](https://www.elastic.co/lp/vector-database).   
+
+## Perils of Opensource
+You might think bringing and hosting your own opensource purpose built vector database is cool.  And you are right it is.  But once your GenAI app is super popular you will begin to see that the vector indexes are in need of constant update and maintenance.  When it the size of the indexes exceed tens of terrabytes and perform poorly or become fragmented, instead of writing killer GenAI apps you will suddenly realize your new job is tier 3 support at 4:00 AM fixing the opensource vector indexes. If you do I hope you remeber these words, its never too late to change your ways and get a fully managed fully supported real database that you can rely on, and let their support get the 4:00 AM phone call.  If you can't tell I speak from experience using opensource databases.  One fine morning I recieved a four AM phone call on a Saturday morning. I was awake with a full on migrane headache. After I fixed the problem, I was done with opensource forever.  First thing on the list was moving that data to a vendor database with 24 hour support.   
+
+## Couchbase Capella
+I have a lot of respect for Couchbase.  I have a customers at Confluent who use Couchbase Capella and love it. I personally like it a great deal. I highly recommend it.  It is a modern NoSQL Json docuemnt database an it works well. I can not tell you enough good things about Couchbase.  I like the tech, the people, and the company. A whole read me dedicated to Couchbase Capella connectivity is here: [Couchbase Capella Vector Search Walk through](https://github.com/brittonlaroche/Confluent-Kafka-Vector-Encoding/tree/main/files/couchbase/).
+
+## MongoDB Atlas
+My favorite is MongoDB Atlas Vector Search. I am biased as I worked for 4 years at MongoDB and I love the company.  I still have stock. The rest of this github is built araound MongoDB Atlas. I created the `product-vector` table with additional fields because MongoDB can create a vector index on the vector field and still be able to query the rest of the fields like a regular database.  MongoDB combines the Operational Data Store (ODS) and the Vector search in one place!  The sink connector will create a document. There is a powerful synergy between Kafka, Confluent and MongoDB that we like to call Kafcongo.
 
 Start by opening the Confluent Cloud and MongoDB Atlas clusters in the browser:   
 
