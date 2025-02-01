@@ -1,6 +1,6 @@
 # Couchbase Capella Vector Search
 
-I tsrated by going to [https://cloud.couchbase.com/](https://cloud.couchbase.com/) and logged in with my google account.  I created a free tier instance and once it was ready to use I followed the steps below in the video to get it set up.  In the mean time, while I wanted for it to be provisioned, I installed a custom connector for couch base in the confluent cloud.
+I started by going to [https://cloud.couchbase.com/](https://cloud.couchbase.com/) and logged in with my google account.  I created a free tier instance and once it was ready to use I followed the steps below in the video to get it set up.  In the mean time, while I wanted for it to be provisioned, I installed a custom connector for couch base in the confluent cloud.
 
 
 
